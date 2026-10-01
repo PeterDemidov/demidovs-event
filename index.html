@@ -31,14 +31,14 @@ header{position:absolute;z-index:10;inset:60px 0 auto;padding:28px 0}nav{display
   <div class="progress" id="progress"></div>
   <div class="host-switcher" aria-label="Выбор ведущих"><div class="wrap host-switcher-inner">
     <a class="host-choice" data-host="petr" href="./"><span><strong>Пётр Демидов</strong><br>ведущий</span></a>
-    <a class="host-choice" data-host="duet" href="duet/"><span><strong>Пётр + Наталья</strong><br>дуэт ведущих</span></a>
+    <a class="host-choice" data-host="duet" href="duet/"><span><strong>Пётр & Наталья</strong><br>дуэт ведущих</span></a>
     <a class="host-choice" data-host="natalia" href="natalia/"><span><strong>Наталья Демидова</strong><br>ведущая</span></a>
   </div></div>
   <header><div class="wrap"><nav><a class="logo" id="siteLogo" data-anchor="top" href="#top"></a><div class="nav-links"><a data-anchor="approach" href="#approach">Подход</a><a data-anchor="formats" href="#formats">Форматы</a><a class="nav-cta" data-anchor="contact" href="#contact">Обсудить событие</a></div></nav></div></header>
   <main id="top">
     <section class="hero"><div class="hero-photo"><img id="heroImage" fetchpriority="high"></div><div class="wrap hero-content"><div class="eyebrow" id="heroEyebrow"></div><h1 id="heroTitle"></h1><div class="hero-bottom"><p id="heroCopy"></p><a class="button" data-anchor="contact" href="#contact">Получить предложение</a></div></div></section>
     <section class="portfolio" id="portfolio"><div class="wrap portfolio-top reveal"><div><div class="section-kicker gold">Портфолио</div><h2 id="portfolioTitle"></h2></div><div><p id="portfolioCopy"></p><div class="portfolio-controls"><button id="portfolioPrev" aria-label="Предыдущая фотография">←</button><span id="portfolioCounter">1 / 1</span><button id="portfolioNext" aria-label="Следующая фотография">→</button></div></div></div><div class="portfolio-track reveal" id="portfolioTrack"></div></section>
-    <section class="videos" id="videos" hidden><div class="wrap"><div class="section-head reveal"><h2>Посмотрите,<br>как это звучит</h2><p id="videoCopy"></p></div><div class="video-grid reveal" id="videoGrid"></div></div></section>
+    <section class="videos" id="videos" hidden><div class="wrap"><div class="section-head reveal"><h2>Смотрите,<br>как это бывает</h2><p id="videoCopy"></p></div><div class="video-grid reveal" id="videoGrid"></div></div></section>
     <section class="manifesto" id="approach"><div class="wrap"><div class="manifesto-grid reveal"><div class="section-kicker" id="approachKicker"></div><h2 id="approachTitle"></h2></div><div class="principles" id="principles"></div></div></section>
     <section class="positioning"><div class="wrap position-grid"><div class="position-intro reveal"><div class="section-kicker gold">Что вы получаете</div><h2 id="positionTitle"></h2><p id="positionLead"></p><aside class="special-note" id="specialNote"></aside></div><div class="value-list" id="valueList"></div></div></section>
     <section class="formats" id="formats"><div class="wrap"><div class="section-head reveal"><h2>Ваш формат.<br>Ваши правила.</h2><p id="formatsLead"></p></div><div class="format-list reveal" id="formatList"></div><div class="duo reveal"><h3 id="featureTitle"></h3><div><p id="featureCopy"></p><a id="featureLink"></a></div></div></div></section>
@@ -92,7 +92,7 @@ const pages={
   },
   duet:{
     title:'Пётр и Наталья Демидовы - дуэт ведущих в Москве',description:'Пётр и Наталья Демидовы - дуэт ведущих. Две сильные стороны, единый сценарий и больше внимания к людям.',
-    logo:'Пётр + Наталья',eyebrow:'Дуэт ведущих · Москва',hero:'Два характера.<br><i>Один ритм вечера.</i>',copy:'Добрый юмор Петра, эмоциональная режиссура Натальи и общее внимание к людям. Дуэт, который слышит друг друга и замечает больше.',image:'images/duet-hero.webp',alt:'Пётр и Наталья Демидовы - дуэт ведущих',
+    logo:'Пётр & Наталья',eyebrow:'Дуэт ведущих · Москва',hero:'Два характера.<br><i>Один ритм вечера.</i>',copy:'Добрый юмор Петра, эмоциональная режиссура Натальи и общее внимание к людям. Дуэт, который слышит друг друга и замечает больше.',image:'images/duet-hero.webp',alt:'Пётр и Наталья Демидовы - дуэт ведущих',
     portfolio:['Вместе в кадре.<br>Вместе в моменте.','Совместная работа, молодожёны, гости и декор - полная атмосфера события, а не только сцена.'],gallery:[3,8,9,10,11,13,14,15,16,24,26,29,30,39,42,45,46,47,54,59,60,61,62,63,64,65,66,67,68,69,70,71,74].map(photo),
     videoCopy:'Здесь собраны все три видео, включая отдельное знакомство «О нас».',videos:[commonVideos[0],['media/videos/about-us.mp4','images/duet-dialogue.webp','О нас','Знакомство с дуэтом без формальностей.'],commonVideos[1]],
     kicker:'Почему дуэт',approach:'Два поля внимания, две реакции и один сценарий. Пока один ведёт зал, второй <em>видит детали и поддерживает момент.</em>',
