@@ -276,6 +276,8 @@
     document.getElementById('featureCopy').textContent=page.featureCopy;
     document.getElementById('featureLink').href=page.featureHref.startsWith('/')?page.featureHref.slice(1):page.featureHref;
     document.getElementById('featureLink').textContent=page.featureLink;
+    const pageRoute=pageKey==='petr'?'./':pageKey+'/';
+    document.querySelectorAll('a[href^="#"]').forEach(link=>link.href=pageRoute+link.getAttribute('href'));
     document.getElementById('footerName').textContent=page.footer;
     document.querySelector('[data-host="'+pageKey+'"]').classList.add('active');
     const heroImage=document.getElementById('heroImage');
