@@ -6,6 +6,9 @@
   <title>Наталья Демидова — ведущая мероприятий в Москве</title>
   <meta name="description" content="Наталья Демидова — ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области. Лёгкое общение, эмоции и продуманный сценарий.">
   <meta name="theme-color" content="#090a0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0c'/%3E%3Cpath d='M17 45V19h10c7 0 11 3 11 9 0 5-4 9-11 9h-4v8h-6Zm6-13h4c3 0 5-1 5-4s-2-4-5-4h-4v8Z' fill='%23d8b568'/%3E%3Cpath d='M40 19h6v26h-6z' fill='%23e8e1d3'/%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
@@ -198,6 +201,12 @@
     .footer-links{display:flex;gap:18px;flex-wrap:wrap}
     .mobile-cta{display:none}
 
+    body{font-family:"Manrope","Helvetica Neue",Arial,sans-serif}
+    :where(h1,.section-title,.trust-item strong,.fear h3,.duo-quote p,.duo-item h3,.review strong,.process-step h3,.price,.bonus strong,.contact h2,.faq summary){font-family:"Montserrat","Helvetica Neue",Arial,sans-serif}
+    h1,.section-title,.contact h2{font-weight:500;letter-spacing:-.045em}
+    .duo-quote .duo-copy{margin-top:18px;color:var(--muted);font-family:"Manrope","Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.62;letter-spacing:0}
+    .duo-quote .duo-signoff{color:var(--gold-light);font-weight:600}
+
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
     .reveal.visible{opacity:1;transform:none}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.gallery-card img{transition:none}.trust-track{animation:none}.trust-group[aria-hidden="true"]{display:none}}
@@ -283,13 +292,13 @@
 
     <section class="section cream">
       <div class="wrap">
-        <div class="section-kicker reveal">Чтобы всем было комфортно</div>
-        <h2 class="section-title reveal">О чём переживают заказчики</h2>
+        <div class="section-kicker reveal">Мой подход</div>
+        <h2 class="section-title reveal">Что я делаю для вашего события</h2>
         <div class="fear-grid">
-          <article class="fear reveal"><span>01</span><h3>«Сценарий получится безличным»</h3><p>Изучаю пару, компанию или проект агентства. В программе появляются ваши истории, задачи и узнаваемые детали.</p></article>
-          <article class="fear reveal"><span>02</span><h3>«Программа не подойдёт нашей аудитории»</h3><p>Учитываю возраст, интересы и отношения внутри компании. Выбираю понятные способы участия и сохраняю время для общения.</p></article>
-          <article class="fear reveal"><span>03</span><h3>«Застенчивых гостей вызовут в центр»</h3><p>Чувствую, кому хочется участвовать, а кому комфортнее наблюдать. Вовлекаю мягко и уважаю личные границы.</p></article>
-          <article class="fear reveal"><span>04</span><h3>«Событие распадётся на отдельные блоки»</h3><p>Использую режиссуру, чтобы у программы были ясное развитие, эмоциональная кульминация и собранный финал.</p></article>
+          <article class="fear reveal"><span>01</span><h3>Ставлю вашу индивидуальность в центр</h3><p>Знаю тренды, но сценарий создаю вокруг ваших историй, характера и узнаваемых деталей.</p></article>
+          <article class="fear reveal"><span>02</span><h3>Создаю программу на годы</h3><p>Продумываю праздник так, чтобы спустя годы вы снова выбрали именно такой вечер.</p></article>
+          <article class="fear reveal"><span>03</span><h3>Нахожу общий язык со всеми</h3><p>Чувствую гостей разных возрастов и характеров. Даже кота, который ненавидит людей, постараюсь расположить к себе.</p></article>
+          <article class="fear reveal"><span>04</span><h3>Выстраиваю драматургию вечера</h3><p>Соединяю программу в цельную историю с ясным развитием, эмоциональной кульминацией и собранным финалом.</p></article>
         </div>
       </div>
     </section>
@@ -299,6 +308,8 @@
         <div class="duo-quote reveal">
           <div class="section-kicker">Мой подход</div>
           <p>Отвечаю за ваше спокойствие и за эмоциональный ритм вечера. Вы проживаете праздник, а я держу сценарий, гостей и важные переходы.</p>
+          <p class="duo-copy">Тренды использую бережно и только тогда, когда они подходят вашей истории. В сценарии остаются детали, по которым гости сразу узнают вас.</p>
+          <p class="duo-copy duo-signoff">Хочу, чтобы вы прожили свой праздник спокойно и с удовольствием.</p>
         </div>
         <div>
           <h2 class="section-title reveal">Что вы получите</h2>
@@ -380,12 +391,12 @@
     <section class="section cream" id="price">
       <div class="wrap">
         <div class="section-kicker reveal">Стоимость</div>
-        <h2 class="section-title reveal">Ведение Натальей от 70 000 ₽</h2>
-        <p class="section-lead reveal">Москва и Московская область входят в стоимость. Выезд в другие города и области рассчитываем отдельно.</p>
+        <h2 class="section-title reveal">Ведущая Наталья</h2>
+        <p class="section-lead reveal">Стоимость ведения - от 70 000 ₽. Москва и Московская область входят в стоимость. Выезд в другие города и области рассчитываем отдельно.</p>
         <div class="pricing-grid">
           <article class="price-card primary reveal">
             <div class="price-label">Наталья Демидова</div>
-            <div class="price">70 000 ₽</div>
+            <div class="price">от 70 000 ₽</div>
             <ul class="price-list">
               <li>6 часов ведения</li>
               <li>знакомство и проработка сценария</li>
