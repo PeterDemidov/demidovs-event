@@ -3,128 +3,518 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <base href="/demidovs-event/">
-  <title>Демидовы - ведущие мероприятий</title>
-  <meta name="description" content="Пётр и Наталья Демидовы - ведущие мероприятий в Москве.">
-  <meta name="theme-color" content="#08090b">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090b'/%3E%3Cpath d='M20 47V17h13c8 0 13 4 13 11s-5 12-14 12h-5v7h-7Zm7-13h5c5 0 7-2 7-6s-2-5-7-5h-5v11Z' fill='%23d9b76d'/%3E%3C/svg%3E">
-  <style>:root{--ink:#08090b;--surface:#101216;--surface2:#171a1f;--paper:#f4f0e7;--gold:#d3ad62;--gold2:#efd9a5;--silver:#c8cdd3;--orange:#d47737;--muted:#a9a8a3;--line:rgba(230,222,206,.15);--r:18px;--ease:cubic-bezier(.2,.72,.2,1);--shadow:0 30px 90px #0006}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--ink);color:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.6;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;font-synthesis:none;overflow-x:hidden}body:after{content:"";position:fixed;inset:0;z-index:100;background:var(--ink);transform:translateY(100%);transition:.5s var(--ease);pointer-events:none}body.leaving:after{transform:none}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:calc(100% - 64px);max-width:1200px;margin:auto}.gold{color:var(--gold);margin-bottom:18px}.progress{position:fixed;z-index:50;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--silver),var(--gold),var(--orange));transform:scaleX(0);transform-origin:left}
-.host-switcher{position:absolute;z-index:12;inset:0 0 auto;border-bottom:1px solid var(--line);background:#08090bc4;backdrop-filter:blur(20px)}.host-switcher-inner{min-height:60px;display:grid;grid-template-columns:repeat(3,1fr)}.host-choice{position:relative;display:flex;align-items:center;justify-content:center;padding:10px 18px;color:#aaa9a4;font-size:.78rem;line-height:1.28;text-align:center;border-left:1px solid var(--line);transition:.3s}.host-choice:last-child{border-right:1px solid var(--line)}.host-choice:hover{color:var(--paper);background:#fff1}.host-choice.active{color:var(--gold2);background:#d3ad6212}.host-choice.active:after{content:"";position:absolute;left:17%;right:17%;bottom:-1px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}.host-choice strong{font-weight:720}
-header{position:absolute;z-index:10;inset:60px 0 auto;padding:28px 0}nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font:400 1.2rem Georgia,serif;white-space:nowrap}.logo span{color:var(--gold)}.nav-links{display:flex;align-items:center;gap:28px;color:#d4d2ca;font-size:.91rem}.nav-cta{border:1px solid #d3ad627a;border-radius:999px;padding:10px 18px;transition:.3s}.nav-cta:hover{color:var(--gold2);background:#d3ad6214}
-.hero{min-height:720px;height:100svh;display:flex;align-items:flex-end;padding:188px 0 74px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;width:55vw;height:55vw;right:-19vw;top:-28vw;border-radius:50%;background:radial-gradient(circle,#d3ad6233,transparent 68%)}.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink),#08090bf5 37%,#08090b7f 67%,#08090b1f),linear-gradient(0deg,#08090bc2,transparent 46%);pointer-events:none}.hero-photo{position:absolute;inset:0 0 0 auto;width:min(60vw,900px);overflow:hidden;clip-path:inset(0 0 0 100%);animation:mask 1.35s .1s var(--ease) forwards}.hero-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%;filter:saturate(.76) contrast(1.06) brightness(.88);transform:scale(1.06);animation:settle 2s .1s var(--ease) forwards}.hero-content{position:relative;z-index:2;width:100%}.eyebrow{text-transform:uppercase;letter-spacing:.2em;color:var(--gold2);font-size:.73rem;font-weight:650;margin-bottom:23px;animation:up .8s .12s both}h1{margin:0;max-width:960px;font-size:clamp(3.6rem,8vw,7.6rem);line-height:.91;letter-spacing:-.062em;font-weight:550;text-wrap:balance;animation:up .9s .2s both}h1 i{font-family:Georgia,serif;font-weight:400;color:var(--gold2)}.hero-bottom{display:grid;grid-template-columns:1fr minmax(290px,410px);gap:64px;align-items:end;margin-top:54px;animation:up .9s .32s both}.hero-bottom p{margin:0;color:#cbc9c1;font-size:clamp(1rem,1.5vw,1.2rem);max-width:660px}.button{display:inline-flex;justify-content:center;align-items:center;min-height:56px;padding:0 28px;border:1px solid #fff3;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold) 58%,var(--orange));color:#111;box-shadow:0 14px 38px #0005;font-weight:730;cursor:pointer;transition:.3s}.button:hover{transform:translateY(-3px);filter:brightness(1.06);box-shadow:0 22px 50px #0008}
-.portfolio,.videos,.positioning,.formats,.contact{padding:116px 0}.portfolio{background:var(--surface);overflow:hidden;border-bottom:1px solid var(--line)}.portfolio-top,.section-head{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:40px}.portfolio h2,.section-head h2{margin:0;font-size:clamp(2.55rem,5vw,4.9rem);line-height:.97;letter-spacing:-.052em;text-wrap:balance}.portfolio-top p,.section-head p{max-width:430px;margin:0;color:var(--muted)}.portfolio-controls{display:flex;gap:10px;margin-top:20px}.portfolio-controls button,#lightboxClose{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--paper);cursor:pointer;font-size:1.2rem;transition:.25s}.portfolio-controls button:hover{background:var(--gold);color:var(--ink)}#portfolioCounter{min-width:70px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-variant-numeric:tabular-nums}.portfolio-track{display:flex;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(18px,calc((100vw - 1180px)/2)) 14px}.portfolio-track::-webkit-scrollbar{display:none}.portfolio-card{position:relative;flex:0 0 auto;height:min(69vh,550px);max-width:80vw;aspect-ratio:var(--ratio,1.35);margin:0;border-radius:var(--r);overflow:hidden;scroll-snap-align:center;background:#08090b;box-shadow:var(--shadow);cursor:zoom-in}.portfolio-card:after{content:"";position:absolute;inset:0;border:1px solid #fff2;border-radius:inherit;pointer-events:none}.portfolio-card img{width:100%;height:100%;display:block;object-fit:contain;filter:saturate(.88);transition:.8s var(--ease)}.portfolio-card:hover img{transform:scale(1.018);filter:saturate(1)}
-.videos{background:#0b0c0e;border-bottom:1px solid var(--line)}.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.video-grid.count-3 .video-card:first-child{grid-row:span 2}.video-card{margin:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface2);box-shadow:var(--shadow)}.video-card video{width:100%;display:block;background:#050506;aspect-ratio:16/9;object-fit:contain}.video-grid.count-3 .video-card:first-child video{height:calc(100% - 84px);min-height:400px}.video-card figcaption{padding:17px 20px}.video-card strong{display:block}.video-card span{color:var(--muted);font-size:.9rem}
-.manifesto{background:#efebe2;color:var(--ink);padding:124px 0}.section-kicker{font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;font-weight:760}.manifesto-grid{display:grid;grid-template-columns:230px 1fr;gap:74px}.manifesto h2{margin:0;max-width:900px;font-size:clamp(2.55rem,5.3vw,5.2rem);line-height:1.03;letter-spacing:-.052em;font-weight:520;text-wrap:balance}.manifesto h2 em{font-family:Georgia,serif;font-weight:400;color:#8d6425}.principles{margin:80px 0 0 304px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.principle{border-top:1px solid #1114;padding-top:18px}.principle b{display:block;font-size:1.08rem;margin-bottom:9px}.principle p{margin:0;color:#62615d}
-.positioning{background:linear-gradient(180deg,var(--ink),#0c0e11)}.position-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(44px,6vw,84px);align-items:start}.position-intro{position:sticky;top:32px;min-width:0}.position-intro h2{margin:16px 0 22px;font:400 clamp(2.45rem,4.4vw,4.65rem)/1.02 Georgia,serif;letter-spacing:-.042em;overflow-wrap:anywhere;text-wrap:balance}.position-intro>p{color:var(--muted)}.value-list{min-width:0;border-top:1px solid var(--line)}.value-item{display:grid;grid-template-columns:52px minmax(0,1fr);gap:22px;padding:28px 0;border-bottom:1px solid var(--line)}.value-item small{color:var(--gold)}.value-item h3{margin:0 0 7px;font-size:clamp(1.3rem,2.1vw,2rem);line-height:1.15;letter-spacing:-.03em}.value-item p{margin:0;color:var(--muted)}.special-note{margin-top:28px;padding:28px;border:1px solid #d3ad6266;border-radius:var(--r);background:linear-gradient(135deg,#d3ad621f,#d477370d)}.special-note b{color:var(--gold2)}.special-note p{margin:8px 0 0;color:#d0cec7}
-.format-list{border-top:1px solid var(--line)}.format{display:grid;grid-template-columns:68px 1fr 1fr;gap:28px;padding:31px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:.3s}.format:hover{padding-inline:14px;background:linear-gradient(90deg,#d3ad6210,transparent)}.format small{color:var(--gold)}.format h3{margin:0;font-size:clamp(1.45rem,2.3vw,2.3rem);letter-spacing:-.035em}.format p{margin:0;color:var(--muted)}.duo{margin-top:78px;border:1px solid #d3ad626b;border-radius:var(--r);background:radial-gradient(circle at 0 0,#d3ad622b,transparent 44%),var(--surface2);padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;box-shadow:var(--shadow)}.duo h3{margin:0;font:400 clamp(2.5rem,5vw,5rem)/.96 Georgia,serif;letter-spacing:-.04em}.duo p{margin:0 0 18px}.duo a{color:var(--gold2);border-bottom:1px solid #efd9a580;font-weight:700}
-.contact{background:var(--surface);border-top:1px solid var(--line)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}.contact h2{margin:0;font-size:clamp(3rem,6vw,6.3rem);line-height:.9;letter-spacing:-.065em}.contact #contactCopy{margin:30px 0 0;color:var(--muted);max-width:520px;font-size:1.08rem}.contact-numbers{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:26px}.contact-numbers a{color:var(--gold2);border-bottom:1px solid #efd9a560}form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.full,.consent{grid-column:1/-1}label{color:#bbb9b1;font-size:.84rem}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:#181b1f;color:var(--paper);padding:16px 17px;outline:none;transition:.2s}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d3ad621a}textarea{min-height:96px;resize:vertical}#recipientField[hidden]{display:none}.consent{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;color:#9f9e98;font-size:.78rem;line-height:1.45}.consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--gold)}.consent a{text-decoration:underline;text-underline-offset:3px;color:#cbc8bd}.messenger-choice{margin:3px 0 0;padding:0;border:0}.messenger-choice legend{margin:0 0 10px;color:#bbb9b1;font-size:.84rem}.messenger-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.messenger-option{position:relative;cursor:pointer}.messenger-option input{position:absolute;opacity:0;pointer-events:none}.messenger-option span{display:flex;min-height:50px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px;background:#181b1f;color:#c9c7bf;font-weight:680;transition:.25s}.messenger-option:hover span{border-color:#d3ad627a;color:var(--paper)}.messenger-option input:checked+span{border-color:var(--gold);background:linear-gradient(135deg,#d3ad6228,#d4773714);color:var(--gold2);box-shadow:0 0 0 3px #d3ad6214}.messenger-option input:focus-visible+span{outline:2px solid var(--gold2);outline-offset:2px}form .button{grid-column:1/-1}.form-note{grid-column:1/-1;color:#898983;font-size:.78rem;margin:0}
-.lightbox{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:70px 24px 24px;background:#040405f2;backdrop-filter:blur(14px)}.lightbox.open{display:grid}.lightbox img{max-width:min(1400px,94vw);max-height:86vh;object-fit:contain;border-radius:12px;box-shadow:var(--shadow)}#lightboxClose{position:absolute;top:18px;right:22px;background:#181b1f;font-size:1.5rem}footer{padding:28px 0;border-top:1px solid var(--line);color:#999891}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-row a{text-decoration:underline;text-underline-offset:4px}#footerPhones{display:flex;gap:18px}
-.reveal{opacity:0;transform:translateY(30px);filter:blur(5px);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease)}.reveal.visible{opacity:1;transform:none;filter:none}.value-item.reveal{transition-delay:calc(var(--i,0)*70ms)}@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes mask{to{clip-path:inset(0)}}@keyframes settle{to{transform:scale(1)}}
-@media(max-width:980px){.position-grid{grid-template-columns:1fr;gap:44px}.position-intro{position:static}.position-intro h2{max-width:760px}.value-list{width:100%}}
-@media(max-width:800px){.wrap{width:calc(100% - 30px);max-width:1180px}.host-choice{min-height:62px;padding:8px 5px;font-size:.68rem}.host-choice span{display:block}header{inset:62px 0 auto;padding:19px 0}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 14px}.hero{min-height:690px;height:100svh;padding:172px 0 42px}.hero:after{background:linear-gradient(0deg,var(--ink),#08090bef 44%,#08090b2e 88%)}.hero-photo{width:100%;height:69%}.hero-photo img{object-position:center 20%}h1{font-size:clamp(3rem,16.5vw,5.1rem);overflow-wrap:anywhere}.hero-bottom,.manifesto-grid,.contact-grid,.duo,.position-grid{grid-template-columns:1fr;gap:30px}.hero-bottom{margin-top:34px}.hero-bottom .button{width:100%}.portfolio,.videos,.manifesto,.positioning,.formats,.contact{padding:82px 0}.portfolio-top,.section-head{display:block}.portfolio-top p,.section-head p{margin-top:18px}.portfolio-card{height:min(64vh,470px);max-width:88vw}.video-grid{grid-template-columns:1fr}.video-grid.count-3 .video-card:first-child{grid-row:auto}.video-grid.count-3 .video-card:first-child video{height:auto;min-height:0}.manifesto-grid{gap:22px}.principles{margin:50px 0 0;grid-template-columns:1fr}.position-intro{position:static}.value-item{grid-template-columns:38px 1fr}.format{grid-template-columns:40px 1fr}.format p{grid-column:2}.duo{padding:31px 25px}.footer-row{display:grid;justify-content:start}}
-@media(max-width:520px){.messenger-options{grid-template-columns:1fr}.logo{font-size:1.02rem}.nav-cta{font-size:.8rem}form{grid-template-columns:1fr}.field{grid-column:1/-1}.portfolio-card{height:min(58vh,430px)}.host-choice strong{font-size:.73rem}.host-choice{font-size:.62rem}.hero{padding-top:164px}h1{letter-spacing:-.055em}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.eyebrow,h1,.hero-bottom,.hero-photo,.hero-photo img{opacity:1;transform:none;filter:none;transition:none;animation:none;clip-path:none}.button,.portfolio-card img{transition:none}body:after{display:none}}
-.legal-page{background:#efebe2;color:#171717;min-height:100vh}.legal-shell{width:min(860px,calc(100% - 32px));margin:auto;padding:48px 0 90px}.legal-back{display:inline-block;margin-bottom:48px;color:#76531e;border-bottom:1px solid #76531e66}.legal-page h1{font-size:clamp(2.5rem,7vw,5.2rem);line-height:.98;animation:none}.legal-page h2{margin:56px 0 18px;font:400 clamp(1.8rem,4vw,2.7rem)/1.1 Georgia,serif}.legal-page h3{margin:32px 0 10px}.legal-page p,.legal-page li{color:#4d4c48}.legal-page section{scroll-margin-top:24px}.legal-meta{margin:20px 0 42px;color:#77746d}.legal-card{padding:24px;border:1px solid #17171726;border-radius:16px;background:#fff8}.legal-page a{text-decoration:underline;text-underline-offset:3px}
-</style>
+  <title>Наталья Демидова — ведущая мероприятий в Москве</title>
+  <meta name="description" content="Наталья Демидова — ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области. Лёгкое общение, эмоции и продуманный сценарий.">
+  <meta name="theme-color" content="#090a0c">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0c'/%3E%3Cpath d='M17 45V19h10c7 0 11 3 11 9 0 5-4 9-11 9h-4v8h-6Zm6-13h4c3 0 5-1 5-4s-2-4-5-4h-4v8Z' fill='%23d8b568'/%3E%3Cpath d='M40 19h6v26h-6z' fill='%23e8e1d3'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Наталья Демидова",
+    "jobTitle": "Ведущая мероприятий",
+    "description": "Ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области.",
+    "url": "https://peterdemidov.github.io/demidovs-event/natalia/",
+    "image": "https://peterdemidov.github.io/demidovs-event/images/natalia-hero-new.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "areaServed": ["Москва", "Московская область"],
+    "telephone": "+7-905-523-95-30",
+    "sameAs": [
+      "https://t.me/demi_nata",
+      "https://vk.ru/duetpena",
+      "https://msk.gorko.ru/тамада/1999137/"
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --ink:#090a0c;--ink-soft:#111318;--card:#171a20;--paper:#f2ede3;--paper-deep:#e7dfd0;
+      --gold:#d4ae62;--gold-light:#f1dca6;--orange:#d47737;--silver:#c7ccd2;--muted:#a9a7a2;
+      --line:rgba(236,226,207,.16);--dark-line:rgba(20,20,20,.14);--radius:22px;
+      --shadow:0 30px 90px rgba(0,0,0,.3);--ease:cubic-bezier(.2,.72,.2,1)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 88% 8%,rgba(212,174,98,.12),transparent 34%),radial-gradient(circle at 6% 54%,rgba(212,119,55,.07),transparent 30%)}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    img,video{display:block;max-width:100%}
+    button{color:inherit}
+    .wrap{width:min(1200px,calc(100% - 64px));margin:auto}
+    .section{padding:112px 0}
+    .section-kicker{margin-bottom:16px;color:var(--gold);font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .section-title{max-width:880px;margin:0;font:500 clamp(2.7rem,6vw,5.7rem)/.95 Georgia,"Times New Roman",serif;letter-spacing:-.05em;text-wrap:balance}
+    .section-lead{max-width:680px;margin:28px 0 0;color:var(--muted);font-size:clamp(1rem,1.8vw,1.22rem)}
+    .button{display:inline-flex;min-height:54px;align-items:center;justify-content:center;padding:14px 25px;border:0;border-radius:999px;background:linear-gradient(110deg,var(--gold-light),var(--gold) 56%,var(--orange));color:#14110b;font-weight:800;box-shadow:0 14px 38px rgba(212,174,98,.18);cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+    .button:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(212,174,98,.28)}
+    .button:focus-visible,.icon-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+    .progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--silver),var(--gold),var(--orange));transform:scaleX(0);transform-origin:left}
+
+    .switcher{position:absolute;z-index:20;inset:0 0 auto;border-bottom:1px solid var(--line);background:rgba(9,10,12,.78);backdrop-filter:blur(20px)}
+    .switcher-inner{display:grid;grid-template-columns:repeat(3,1fr);min-height:62px}
+    .switcher a{display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;padding:10px 16px;border-left:1px solid var(--line);color:#aaa9a5;font-size:.78rem;line-height:1.25;text-align:center;transition:.25s}
+    .switcher a:last-child{border-right:1px solid var(--line)}
+    .switcher a:hover{color:var(--paper);background:rgba(255,255,255,.04)}
+    .switcher a.active{color:var(--gold-light);background:rgba(212,174,98,.1)}
+    .switcher small{display:block;color:#777772;font-size:.68rem}
+
+    .hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden}
+    .hero-media{position:absolute;inset:0}
+    .hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,7,9,.96) 0%,rgba(6,7,9,.72) 44%,rgba(6,7,9,.18) 76%),linear-gradient(0deg,var(--ink) 0%,transparent 30%)}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 28%;scale:1.02}
+    .hero-content{position:relative;z-index:2;padding:150px 0 96px}
+    .hero-copy{max-width:770px}
+    .hero-eyebrow{margin-bottom:24px;color:var(--gold-light);font-size:.78rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+    h1{margin:0;font:500 clamp(3.6rem,9vw,8.7rem)/.82 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+    h1 em{display:block;color:var(--gold-light);font-weight:400}
+    .hero-text{max-width:650px;margin:30px 0 34px;color:#d2d0ca;font-size:clamp(1.05rem,2vw,1.35rem)}
+    .hero-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .hero-note{color:#a7a6a1;font-size:.88rem}
+
+    .trust{border-block:1px solid var(--line);background:#0d0f13}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{min-height:142px;padding:29px 24px;border-left:1px solid var(--line)}
+    .trust-item:last-child{border-right:1px solid var(--line)}
+    .trust-item strong{display:block;color:var(--gold-light);font:500 clamp(1.7rem,3vw,2.7rem)/1 Georgia,serif}
+    .trust-item span{display:block;margin-top:12px;color:#aaa9a4;font-size:.86rem}
+
+    .showreel-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(36px,7vw,96px);align-items:center}
+    .video-shell{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#050608;box-shadow:var(--shadow)}
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;margin-top:42px}
+    .video-shell video{width:100%;aspect-ratio:16/9;object-fit:cover}
+    .video-caption{display:flex;justify-content:space-between;gap:24px;padding:16px 18px;color:#aaa9a4;font-size:.83rem}
+    .video-caption strong{color:var(--paper)}
+
+    .cream{background:var(--paper);color:#171717}
+    .cream .section-kicker{color:#866025}
+    .cream .section-lead{color:#68645d}
+    .fear-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:52px}
+    .fear{padding:30px;border:1px solid var(--dark-line);border-radius:var(--radius);background:rgba(255,255,255,.42)}
+    .fear span{display:block;margin-bottom:22px;color:#98703a;font:500 1rem/1 Georgia,serif}
+    .fear h3{margin:0 0 11px;font:500 clamp(1.5rem,2.6vw,2.2rem)/1.06 Georgia,serif;letter-spacing:-.025em}
+    .fear p{margin:0;color:#625f59}
+
+    .duo-value{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(48px,8vw,120px);align-items:start}
+    .duo-quote{position:sticky;top:105px;padding:36px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(212,174,98,.1),rgba(255,255,255,.02))}
+    .duo-quote p{margin:0;font:400 clamp(1.55rem,3vw,2.65rem)/1.18 Georgia,serif;letter-spacing:-.025em}
+    .duo-list{display:grid;gap:0}
+    .duo-item{display:grid;grid-template-columns:62px 1fr;gap:22px;padding:29px 0;border-top:1px solid var(--line)}
+    .duo-item:last-child{border-bottom:1px solid var(--line)}
+    .duo-item small{color:var(--gold);font-weight:800}
+    .duo-item h3{margin:0 0 8px;font:500 clamp(1.45rem,2.4vw,2rem)/1.05 Georgia,serif}
+    .duo-item p{margin:0;color:var(--muted)}
+
+    .gallery-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}
+    .gallery-controls{display:flex;gap:10px}
+    .icon-button{width:50px;height:50px;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;transition:.25s}
+    .icon-button:hover{border-color:var(--gold);color:var(--gold-light)}
+    .gallery-track{display:grid;grid-auto-flow:column;grid-auto-columns:min(72vw,510px);gap:16px;overflow:auto;padding:0 max(32px,calc((100vw - 1200px)/2)) 30px;scroll-snap-type:x mandatory;scrollbar-width:none}
+    .gallery-track::-webkit-scrollbar{display:none}
+    .gallery-card{height:min(68vw,620px);margin:0;overflow:hidden;border-radius:var(--radius);background:var(--card);scroll-snap-align:center}
+    .gallery-card img{width:100%;height:100%;object-fit:cover;transition:scale .8s var(--ease)}
+    .gallery-card:hover img{scale:1.025}
+
+    .reviews{overflow:hidden}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:52px}
+    .review{display:flex;flex-direction:column;padding:30px;border:1px solid var(--dark-line);border-radius:var(--radius);background:rgba(255,255,255,.48)}
+    .review blockquote{margin:0;color:#3f3d39;font-size:1rem}
+    .review details{margin-top:10px}
+    .review summary{color:#805d28;cursor:pointer;font-weight:700}
+    .review footer{margin-top:auto;padding-top:26px;border-top:1px solid var(--dark-line)}
+    .review strong{display:block;font-family:Georgia,serif;font-size:1.16rem}
+    .review span{color:#77726a;font-size:.84rem}
+
+    .process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:54px;border-block:1px solid var(--line)}
+    .process-step{padding:30px 24px;border-left:1px solid var(--line)}
+    .process-step:last-child{border-right:1px solid var(--line)}
+    .process-step small{color:var(--gold);font-weight:800}
+    .process-step h3{margin:32px 0 10px;font:500 1.55rem/1.05 Georgia,serif}
+    .process-step p{margin:0;color:var(--muted);font-size:.94rem}
+
+    .pricing-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:52px}
+    .price-card{padding:clamp(30px,5vw,54px);border:1px solid var(--dark-line);border-radius:var(--radius);background:#fff8}
+    .price-card.primary{background:#17191d;color:var(--paper);border-color:#17191d;box-shadow:var(--shadow)}
+    .price-label{color:#9a7133;font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .primary .price-label{color:var(--gold)}
+    .price{margin:16px 0 30px;font:500 clamp(3rem,6vw,5.4rem)/.92 Georgia,serif;letter-spacing:-.05em}
+    .price-list{display:grid;gap:13px;margin:0;padding:0;list-style:none}
+    .price-list li{display:grid;grid-template-columns:18px 1fr;gap:10px;color:#66625b}
+    .primary .price-list li{color:#c8c5be}
+    .price-list li:before{content:"✓";color:var(--gold)}
+    .bonus{margin-top:28px;padding:20px;border:1px solid rgba(212,174,98,.35);border-radius:16px;background:rgba(212,174,98,.08)}
+    .bonus strong{display:block;color:var(--gold-light);font-family:Georgia,serif;font-size:1.25rem}
+    .bonus p{margin:6px 0 0;color:#c9c5bd}
+    .addons{display:grid;gap:14px;margin-top:28px}
+    .addon{padding:18px 0;border-top:1px solid var(--dark-line)}
+    .addon strong{display:flex;justify-content:space-between;gap:20px}
+    .addon p{margin:7px 0 0;color:#6e6961;font-size:.92rem}
+
+    .faq{max-width:900px;margin:52px auto 0}
+    .faq details{border-top:1px solid var(--line)}
+    .faq details:last-child{border-bottom:1px solid var(--line)}
+    .faq summary{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:23px 0;cursor:pointer;font:500 clamp(1.15rem,2.2vw,1.55rem)/1.2 Georgia,serif;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";color:var(--gold);font:400 1.6rem/1 Arial,sans-serif}
+    .faq details[open] summary:after{content:"−"}
+    .faq p{max-width:730px;margin:0;padding:0 0 24px;color:var(--muted)}
+    .placeholder{display:inline-block;padding:2px 6px;border-radius:5px;background:rgba(212,119,55,.16);color:#f0aa76;font-weight:700}
+
+    .contact{padding:116px 0;background:#0e1014}
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(50px,8vw,110px);align-items:start}
+    .contact h2{margin:0;font:500 clamp(3rem,7vw,6.6rem)/.88 Georgia,serif;letter-spacing:-.055em}
+    .contact-copy{margin:26px 0;color:var(--muted)}
+    .contact-links{display:flex;flex-wrap:wrap;gap:12px 24px}
+    .contact-links a{color:var(--gold-light);border-bottom:1px solid rgba(212,174,98,.35)}
+    form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .field{min-width:0}
+    .field.full,.consent,.channel,.submit-wrap{grid-column:1/-1}
+    label,.channel legend{display:block;margin-bottom:7px;color:#aaa9a4;font-size:.79rem}
+    input,select,textarea{width:100%;min-height:56px;border:1px solid var(--line);border-radius:13px;background:#181b20;color:var(--paper);padding:13px 16px;outline:0}
+    input::placeholder,textarea::placeholder{color:#6f7072}
+    textarea{min-height:118px;resize:vertical}
+    .channel{margin:2px 0 0;padding:0;border:0}
+    .channel-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .channel-option{margin:0;cursor:pointer}
+    .channel-option input{position:absolute;opacity:0;pointer-events:none}
+    .channel-option span{display:flex;min-height:52px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:13px;background:#181b20;color:#c4c2bd;font-weight:700;transition:.2s}
+    .channel-option input:checked+span{border-color:var(--gold);background:rgba(212,174,98,.12);color:var(--gold-light)}
+    .consent{display:grid;grid-template-columns:20px 1fr;gap:10px;margin:2px 0 0;color:#aaa9a4;font-size:.76rem}
+    .consent input{width:18px;min-height:18px;margin:2px 0 0;accent-color:var(--gold)}
+    .consent a{text-decoration:underline;text-underline-offset:2px}
+    .submit-wrap .button{width:100%;margin-top:5px}
+    .form-note{margin:12px 0 0;color:#898984;font-size:.8rem}
+
+    .footer{padding:34px 0 100px;border-top:1px solid var(--line)}
+    .footer-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#8e8d89;font-size:.82rem}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    .mobile-cta{display:none}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.gallery-card img{transition:none}}
+    @media (max-width:980px){
+      .showreel-grid,.duo-value,.contact-grid{grid-template-columns:1fr}.duo-quote{position:static}.trust-grid,.process-grid{grid-template-columns:repeat(2,1fr)}
+      .trust-item:nth-child(2),.process-step:nth-child(2){border-right:1px solid var(--line)}
+      .trust-item:nth-child(n+3),.process-step:nth-child(n+3){border-top:1px solid var(--line)}
+      .pricing-grid{grid-template-columns:1fr}.contact-grid{gap:56px}
+    }
+    @media (max-width:720px){
+      .wrap{width:min(100% - 32px,1200px)}.section{padding:82px 0}.switcher small{display:none}.switcher a{padding:9px 7px;font-size:.7rem}
+      .hero-content{padding:132px 0 64px}.hero-media:after{background:linear-gradient(0deg,var(--ink) 1%,rgba(6,7,9,.7) 55%,rgba(6,7,9,.28) 100%)}
+      .hero-media img{object-position:56% center}.hero-text{margin-top:22px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-note{max-width:280px}
+      .trust-grid,.fear-grid,.reviews-grid,.process-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2),.process-step,.process-step:nth-child(2){border-right:1px solid var(--line)}
+      .trust-item:nth-child(n+2),.process-step:nth-child(n+2){border-top:1px solid var(--line)}.trust-item{min-height:112px}
+      .gallery-head{align-items:flex-start;flex-direction:column}.gallery-track{grid-auto-columns:84vw;padding-inline:16px}.gallery-card{height:112vw;max-height:620px}
+      form{grid-template-columns:1fr}.channel-options{grid-template-columns:1fr}.contact{padding-bottom:132px}.footer{padding-bottom:122px}
+      .mobile-cta{position:fixed;z-index:80;display:block;left:14px;right:14px;bottom:max(12px,env(safe-area-inset-bottom));padding:7px;border:1px solid rgba(212,174,98,.32);border-radius:999px;background:rgba(9,10,12,.9);backdrop-filter:blur(18px);box-shadow:0 12px 45px rgba(0,0,0,.45)}
+      .mobile-cta .button{width:100%;min-height:48px}
+    }
+    @media (max-width:420px){h1{font-size:3.25rem}.section-title{font-size:2.55rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3.2rem}}
+  </style>
 </head>
 <body>
-  <div class="progress" id="progress"></div>
-  <div class="host-switcher" aria-label="Выбор ведущих"><div class="wrap host-switcher-inner">
-    <a class="host-choice" data-host="petr" href="./"><span><strong>Пётр Демидов</strong><br>ведущий</span></a>
-    <a class="host-choice" data-host="duet" href="duet/"><span><strong>Пётр & Наталья</strong><br>дуэт ведущих</span></a>
-    <a class="host-choice" data-host="natalia" href="natalia/"><span><strong>Наталья Демидова</strong><br>ведущая</span></a>
-  </div></div>
-  <header><div class="wrap"><nav><a class="logo" id="siteLogo" data-anchor="top" href="#top"></a><div class="nav-links"><a data-anchor="approach" href="#approach">Подход</a><a data-anchor="formats" href="#formats">Форматы</a><a class="nav-cta" data-anchor="contact" href="#contact">Обсудить событие</a></div></nav></div></header>
-  <main id="top">
-    <section class="hero"><div class="hero-photo"><img id="heroImage" fetchpriority="high"></div><div class="wrap hero-content"><div class="eyebrow" id="heroEyebrow"></div><h1 id="heroTitle"></h1><div class="hero-bottom"><p id="heroCopy"></p><a class="button" data-anchor="contact" href="#contact">Получить предложение</a></div></div></section>
-    <section class="portfolio" id="portfolio"><div class="wrap portfolio-top reveal"><div><div class="section-kicker gold">Портфолио</div><h2 id="portfolioTitle"></h2></div><div><p id="portfolioCopy"></p><div class="portfolio-controls"><button id="portfolioPrev" aria-label="Предыдущая фотография">←</button><span id="portfolioCounter">1 / 1</span><button id="portfolioNext" aria-label="Следующая фотография">→</button></div></div></div><div class="portfolio-track reveal" id="portfolioTrack"></div></section>
-    <section class="videos" id="videos" hidden><div class="wrap"><div class="section-head reveal"><h2>Смотрите,<br>как это бывает</h2><p id="videoCopy"></p></div><div class="video-grid reveal" id="videoGrid"></div></div></section>
-    <section class="manifesto" id="approach"><div class="wrap"><div class="manifesto-grid reveal"><div class="section-kicker" id="approachKicker"></div><h2 id="approachTitle"></h2></div><div class="principles" id="principles"></div></div></section>
-    <section class="positioning"><div class="wrap position-grid"><div class="position-intro reveal"><div class="section-kicker gold">Что вы получаете</div><h2 id="positionTitle"></h2><p id="positionLead"></p><aside class="special-note" id="specialNote"></aside></div><div class="value-list" id="valueList"></div></div></section>
-    <section class="formats" id="formats"><div class="wrap"><div class="section-head reveal"><h2>Ваш формат.<br>Ваши правила.</h2><p id="formatsLead"></p></div><div class="format-list reveal" id="formatList"></div><div class="duo reveal"><h3 id="featureTitle"></h3><div><p id="featureCopy"></p><a id="featureLink"></a></div></div></div></section>
-    <section class="contact" id="contact"><div class="wrap contact-grid"><div class="reveal"><div class="section-kicker gold">Расскажите о событии</div><h2>Давайте<br>знакомиться</h2><p id="contactCopy"></p><div class="contact-numbers" id="contactNumbers"></div></div><form id="leadForm" class="reveal">
-      <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="name" required placeholder="Имя"></div>
-      <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00"></div>
-      <div class="field"><label for="type">Формат события</label><select id="type" name="type"><option>Свадьба</option><option>Корпоратив</option><option>Частное событие</option><option>Другое</option></select></div>
-      <div class="field"><label for="date">Дата</label><input id="date" name="date" type="date"></div>
-      <div class="field full" id="recipientField"><label for="recipient">Кому отправить сообщение</label><select id="recipient" name="recipient"></select></div>
-      <div class="field full"><label for="details">Несколько слов о событии</label><textarea id="details" name="details" placeholder="Город, количество гостей, ваши пожелания"></textarea></div>
-      <label class="consent"><input type="checkbox" name="consent" required><span>Я даю <a href="privacy/#consent" target="_blank">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="privacy/" target="_blank">политикой обработки персональных данных</a>.</span></label>
-      <fieldset class="messenger-choice full"><legend>Куда отправить заявку</legend><div class="messenger-options"><label class="messenger-option"><input type="radio" name="messenger" value="whatsapp" checked><span>WhatsApp</span></label><label class="messenger-option"><input type="radio" name="messenger" value="telegram"><span>Telegram</span></label><label class="messenger-option"><input type="radio" name="messenger" value="max"><span>MAX</span></label></div></fieldset>
-      <button class="button" id="submitButton" type="submit">Перейти в WhatsApp</button><p class="form-note" id="formNote">Сайт не сохраняет данные. После нажатия откроется выбранный мессенджер с готовым сообщением.</p>
-    </form></div></section>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="switcher" aria-label="Выбор ведущих">
+    <nav class="switcher-inner wrap">
+      <a href="../petr/">Пётр Демидов<small>ведущий</small></a>
+      <a href="../">Пётр &amp; Наталья<small>дуэт ведущих</small></a>
+      <a class="active" href="./" aria-current="page">Наталья Демидова<small>ведущая</small></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-media"><img src="../images/natalia-hero-new.webp" alt="Наталья Демидова ведёт мероприятие" width="1600" height="1067"></div>
+      <div class="hero-content wrap">
+        <div class="hero-copy reveal">
+          <div class="hero-eyebrow">Ведущая мероприятий · Москва и Московская область</div>
+          <h1>Эмоции, которые<em>остаются с вами.</em></h1>
+          <p class="hero-text">Веду интеллигентно, легко и эмоционально. Чувствую людей, бережно работаю с гостями и создаю сценарий, который отражает вашу историю.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Проверить свою дату</a>
+            <span class="hero-note">Бронирование на 2027 год открыто</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Факты о ведущих">
+      <div class="trust-grid wrap">
+        <div class="trust-item"><strong>12 лет</strong><span>связана с ведением</span></div>
+        <div class="trust-item"><strong>МГУ</strong><span>окончила факультет журналистики</span></div>
+        <div class="trust-item"><strong>0</strong><span>опозданий за годы работы</span></div>
+        <div class="trust-item"><strong>500+</strong><span>гостей в самом большом зале</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="videos-title">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="section-kicker">Видео</div>
+          <h2 class="section-title" id="videos-title">Сами взгляните</h2>
+          <p class="section-lead">Шоурил и живой фрагмент праздника.</p>
+        </div>
+        <div class="videos-grid">
+          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/natalia-hero-new.webp"><source src="../media/videos/showreel.mp4" type="video/mp4"></video><figcaption class="video-caption"><strong>Шоурил</strong><span>Наталья Демидова</span></figcaption></figure>
+          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/couple-dance.webp"><source src="../media/videos/wedding-party.mp4" type="video/mp4"></video><figcaption class="video-caption"><strong>Фрагмент праздника</strong><span>Живой момент</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream">
+      <div class="wrap">
+        <div class="section-kicker reveal">Чтобы всем было комфортно</div>
+        <h2 class="section-title reveal">О чём переживают заказчики</h2>
+        <div class="fear-grid">
+          <article class="fear reveal"><span>01</span><h3>«Сценарий получится безличным»</h3><p>Изучаю пару, компанию или проект агентства. В программе появляются ваши истории, задачи и узнаваемые детали.</p></article>
+          <article class="fear reveal"><span>02</span><h3>«Программа не подойдёт нашей аудитории»</h3><p>Учитываю возраст, интересы и отношения внутри компании. Выбираю понятные способы участия и сохраняю время для общения.</p></article>
+          <article class="fear reveal"><span>03</span><h3>«Застенчивых гостей вызовут в центр»</h3><p>Чувствую, кому хочется участвовать, а кому комфортнее наблюдать. Вовлекаю мягко и уважаю личные границы.</p></article>
+          <article class="fear reveal"><span>04</span><h3>«Событие распадётся на отдельные блоки»</h3><p>Использую режиссуру, чтобы у программы были ясное развитие, эмоциональная кульминация и собранный финал.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap duo-value">
+        <div class="duo-quote reveal">
+          <div class="section-kicker">Мой подход</div>
+          <p>Отвечаю за ваше спокойствие и за эмоциональный ритм вечера. Вы проживаете праздник, а я держу сценарий, гостей и важные переходы.</p>
+        </div>
+        <div>
+          <h2 class="section-title reveal">Что вы получите</h2>
+          <div class="duo-list">
+            <article class="duo-item reveal"><small>01</small><div><h3>Авторская церемония</h3><p>Пишу историю пары простыми словами и выстраиваю появление молодожёнов как важный момент дня.</p></div></article>
+            <article class="duo-item reveal"><small>02</small><div><h3>Фишки о вас</h3><p>Придумываю детали, в которых гости узнают ваши привычки, чувства и общий юмор.</p></div></article>
+            <article class="duo-item reveal"><small>03</small><div><h3>Внимание каждому</h3><p>Замечаю детей, родителей, бабушек, дедушек и друзей. У каждого остаётся комфортное место в программе.</p></div></article>
+            <article class="duo-item reveal"><small>04</small><div><h3>Драматургия вечера</h3><p>Соединяю блоки в цельную историю и веду гостей к эмоциональному финалу.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="wrap gallery-head">
+        <div class="reveal">
+          <div class="section-kicker">Портфолио</div>
+          <h2 class="section-title">Запечатлённые эмоции</h2>
+        </div>
+        <div class="gallery-controls" aria-label="Управление галереей">
+          <button class="icon-button" id="galleryPrev" type="button" aria-label="Предыдущие фотографии">←</button>
+          <button class="icon-button" id="galleryNext" type="button" aria-label="Следующие фотографии">→</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="galleryTrack" aria-label="Фотографии с мероприятий">
+        <figure class="gallery-card"><img src="../media/photos/gallery-001.webp" alt="Наталья Демидова на мероприятии, фото 1" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-004.webp" alt="Наталья Демидова на мероприятии, фото 2" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-012.webp" alt="Наталья Демидова на мероприятии, фото 3" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-017.webp" alt="Наталья Демидова на мероприятии, фото 4" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-020.webp" alt="Наталья Демидова на мероприятии, фото 5" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-022.webp" alt="Наталья Демидова на мероприятии, фото 6" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-023.webp" alt="Наталья Демидова на мероприятии, фото 7" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-032.webp" alt="Наталья Демидова на мероприятии, фото 8" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-038.webp" alt="Наталья Демидова на мероприятии, фото 9" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-041.webp" alt="Наталья Демидова на мероприятии, фото 10" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-043.webp" alt="Наталья Демидова на мероприятии, фото 11" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-044.webp" alt="Наталья Демидова на мероприятии, фото 12" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-048.webp" alt="Наталья Демидова на мероприятии, фото 13" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-049.webp" alt="Наталья Демидова на мероприятии, фото 14" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-051.webp" alt="Наталья Демидова на мероприятии, фото 15" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-053.webp" alt="Наталья Демидова на мероприятии, фото 16" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-055.webp" alt="Наталья Демидова на мероприятии, фото 17" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-056.webp" alt="Наталья Демидова на мероприятии, фото 18" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-057.webp" alt="Наталья Демидова на мероприятии, фото 19" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../media/photos/gallery-073.webp" alt="Наталья Демидова на мероприятии, фото 20" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../images/natalia-emotion.webp" alt="Наталья в эмоциональный момент праздника" loading="lazy"></figure>
+        <figure class="gallery-card"><img src="../images/natalia-hero.webp" alt="Наталья ведёт мероприятие" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="section cream reviews" id="reviews">
+      <div class="wrap">
+        <div class="section-kicker reveal">Говорят клиенты</div>
+        <h2 class="section-title reveal">Что заказчики вспоминают о моём ведении</h2>
+        <div class="reviews-grid">
+          <article class="review reveal"><blockquote>«Хотим выразить огромную благодарность ведущим Наталье и Петру. Вы не просто провели мероприятие — вы создали АТМОСФЕРУ. Было очень комфортно, весело и искренне. Мы прекрасно запомнили этот день благодаря вашей энергии, профессионализму и тому, как бережно вы отнеслись к нашим пожеланиям».</blockquote><footer><strong>Анастасия</strong><span>Невеста · свадьба 28.06.2026</span></footer></article>
+          <article class="review reveal"><blockquote>«Свадьба моей мечты, и это без преувеличения. Всё прошло настолько легко, весело и идеально, что мы до сих пор не можем поверить, что это был наш праздник».</blockquote><details><summary>Читать весь отзыв</summary><p>Уже с момента ЗАГСа мы поймали своё настроение и волну, а Петя и Наташа смогли раскрыть её ещё сильнее. Мы просто кайфовали от каждого момента собственной свадьбы. Самое крутое, что ребята почти ничего заранее нам не рассказывали, и каждое событие становилось настоящим сюрпризом: живым, эмоциональным, интересным и очень атмосферным. Всё происходило настолько естественно и легко, что хотелось проживать этот день снова и снова. Отдельное удовольствие видеть гостей такими вовлечёнными. Все участвовали, смеялись, слушали тосты, реагировали на каждую активность. Эти живые эмоции гостей, наверное, самое ценное, что можно получить в такой день. Мы безумно благодарны за эту атмосферу, за настроение и за воспоминания, которые останутся с нами на всю жизнь. Это действительно событие, которое невозможно сравнить ни с чем другим.</p></details><footer><strong>Иван</strong><span>Жених · свадьба 06.07.2024</span></footer></article>
+          <article class="review reveal"><blockquote>«Они реализовали все наши желания и даже больше. Постоянно были на связи и помогали на всех этапах подготовки к свадьбе. Во время праздника мы вообще не переживали. Было ощущение, что всё под полным контролем».</blockquote><details><summary>Читать весь отзыв</summary><p>Ребята были на площадке за 2 часа до начала и не просто ждали гостей, а включились в процесс: помогли решить организационные моменты и сгладили несколько факапов, хотя это вообще не входило в их обязанности. Петр и Наталья это не просто ведущие, это команда, которая делает праздник по-настоящему душевным. Спасибо большое.</p></details><footer><strong>Оксана</strong><span>Невеста · свадьба</span></footer></article>
+          <article class="review reveal"><blockquote>«Вы — сердце всеобщего настроения. Вы — вайб этого вечера! Мне кажется, что КАЖДЫЙ наш гость сказал нам, какие вы классные».</blockquote><details><summary>Читать весь отзыв</summary><p>Самое главное то, насколько они чувствуют пару и подстраиваются под контекст мероприятия. Насколько круто они продумывают все детали, насколько они живые, яркие, искренние! А еще мне кажется, что это очень символично, когда твою свадьбу ведет такая пара — любящая друг друга! Наташа! Петя! Вы просто космос! Спасибо вам за вас!</p></details><footer><strong>Мария</strong><span>Невеста · свадьба 28.02.2026</span></footer></article>
+          <article class="review reveal"><blockquote>«Нам все сказали, как им понравилась свадьба и ваше ведение этой свадьбы! Это было чудесно! Вы лучшие!»</blockquote><footer><strong>Анастасия</strong><span>Невеста · свадьба 13.02.2025</span></footer></article>
+          <article class="review reveal"><blockquote>«Праздник получился шедевральный! Все гости и мы в том числе в непередаваемом восторге. Настолько приятная, зажигательная и душевная у нас была атмосфера, что несколько гостей вдохновились и на будущий год тоже решили отпраздновать свои юбилеи!»</blockquote><details><summary>Читать весь отзыв</summary><p>Этот день действительно, благодаря вам, останется в нашей памяти незабываемым впечатлением! Сделать самой мороженое для гостей — это вообще огонь!</p></details><footer><strong>Екатерина</strong><span>Юбилей · 19.07.2025</span></footer></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker reveal">Подготовка</div>
+        <h2 class="section-title reveal">Как мы работаем</h2>
+        <div class="process-grid">
+          <article class="process-step reveal"><small>01</small><h3>Заявка</h3><p>Вы сообщаете дату, формат и примерное количество гостей.</p></article>
+          <article class="process-step reveal"><small>02</small><h3>Созвон</h3><p>Знакомимся, обсуждаем атмосферу и отвечаем на ваши вопросы.</p></article>
+          <article class="process-step reveal"><small>03</small><h3>Встреча и сценарий</h3><p>Собираем истории, узнаём гостей и готовим программу под вашу компанию.</p></article>
+          <article class="process-step reveal"><small>04</small><h3>Праздник</h3><p>Приезжаем заранее, проверяем площадку и ведём вечер шесть часов.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream" id="price">
+      <div class="wrap">
+        <div class="section-kicker reveal">Стоимость</div>
+        <h2 class="section-title reveal">Ведение Натальей от 70 000 ₽</h2>
+        <p class="section-lead reveal">Москва и Московская область входят в стоимость. Выезд в другие города и области рассчитываем отдельно.</p>
+        <div class="pricing-grid">
+          <article class="price-card primary reveal">
+            <div class="price-label">Наталья Демидова</div>
+            <div class="price">70 000 ₽</div>
+            <ul class="price-list">
+              <li>6 часов ведения</li>
+              <li>знакомство и проработка сценария</li>
+              <li>одна личная встреча</li>
+              <li>два видеосозвона</li>
+              <li>постоянная связь в мессенджерах</li>
+              <li>выезд по Москве и Московской области</li>
+            </ul>
+            <div class="bonus"><strong>Авторская церемония</strong><p>Историю пары и текст церемонии Наталья готовит специально для вашего события.</p></div>
+          </article>
+          <article class="price-card reveal">
+            <div class="price-label">Музыкальное сопровождение</div>
+            <div class="addons">
+              <div class="addon"><strong><span>DJ</span><span>30 000 ₽</span></strong><p>6 часов работы без комплекта оборудования.</p></div>
+              <div class="addon"><strong><span>DJ и комплект</span><span>от 40 000 ₽</span></strong><p>DJ, стандартное музыкальное оборудование, небольшой свет, экран и проектор на 6 часов. Состав комплекта может меняться в зависимости от размера зала.</p></div>
+              <div class="addon"><strong><span>Подбор DJ</span><span>по вашей дате</span></strong><p>DJ является отдельным артистом и может быть занят. Работаю с лучшими диджеями, поэтому окончательная стоимость зависит от выбранного специалиста и оборудования.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-kicker reveal">Вопросы и ответы</div>
+        <h2 class="section-title reveal">До первой встречи</h2>
+        <div class="faq">
+          <details class="reveal"><summary>Сколько часов длится программа?</summary><p>В стоимость входит 6 часов ведения. Тайминг подстраиваем под формат, площадку и план события.</p></details>
+          <details class="reveal"><summary>Можно заказать DJ и оборудование?</summary><p>Да. DJ на 6 часов стоит 30 000 ₽ без оборудования. Комплект с музыкальным оборудованием, небольшим светом, экраном и проектором стоит 40 000 ₽.</p></details>
+          <details class="reveal"><summary>Сколько стоит выезд?</summary><p>По Москве и Московской области выезжаем бесплатно. Другие области и города обсуждаем отдельно.</p></details>
+          <details class="reveal"><summary>Что будет со стеснительными гостями?</summary><p>Мы наблюдаем за реакцией людей и предлагаем участие без давления. Тихий гость может остаться наблюдателем, а общение всё равно будет комфортным.</p></details>
+          <details class="reveal"><summary>Проводите тематические вечера?</summary><p>Да, провожу тематические свадьбы, корпоративы и частные праздники.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="section-kicker">Свободные даты</div>
+          <h2>Проверим<br>вашу дату</h2>
+          <p class="contact-copy">Расскажите о событии. Если я сейчас не веду программу, отвечу сразу и пришлю стоимость на вашу дату.</p>
+          <div class="contact-links">
+            <a href="tel:+79055239530">Наталья: +7 905 523-95-30</a>
+          </div>
+        </div>
+        <form id="leadForm" class="reveal">
+          <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="name" required placeholder="Имя"></div>
+          <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00"></div>
+          <div class="field"><label for="date">Дата события</label><input id="date" name="date" type="date"></div>
+          <div class="field"><label for="guests">Количество гостей</label><input id="guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="Например, 70"></div>
+          <div class="field"><label for="format">Формат</label><select id="format" name="format"><option>Свадьба</option><option>Корпоратив</option><option>Юбилей</option><option>Частное событие</option><option>Другое</option></select></div>
+          <input type="hidden" name="recipient" value="natalia">
+          <div class="field"><label for="city">Город или площадка</label><input id="city" name="city" placeholder="Москва"></div>
+          <fieldset class="channel">
+            <legend>Как с вами связаться</legend>
+            <div class="channel-options">
+              <label class="channel-option"><input type="radio" name="channel" value="whatsapp" checked><span>WhatsApp</span></label>
+              <label class="channel-option"><input type="radio" name="channel" value="telegram"><span>Telegram</span></label>
+              <label class="channel-option"><input type="radio" name="channel" value="max"><span>MAX</span></label>
+            </div>
+          </fieldset>
+          <label class="consent"><input type="checkbox" name="consent" required><span>Я даю <a href="../privacy/#consent" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="../privacy/" target="_blank" rel="noopener">политикой обработки персональных данных</a>.</span></label>
+          <div class="submit-wrap"><button class="button" type="submit">Проверить свою дату</button><p class="form-note" id="formNote">Откроется выбранный способ связи с готовым сообщением.</p></div>
+        </form>
+      </div>
+    </section>
   </main>
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><button id="lightboxClose" aria-label="Закрыть">×</button><img id="lightboxImage" alt=""></div>
-  <footer><div class="wrap footer-row"><span>© <span id="year"></span> <span id="footerName"></span></span><div id="footerPhones"></div><a href="privacy/">Персональные данные</a><span>Москва и выездные события</span></div></footer>
-  <script>const pageKey=new URLSearchParams(location.search).get('page')||(location.pathname.includes('/duet')?'duet':location.pathname.includes('/natalia')?'natalia':'petr');
-const photo=n=>'media/photos/gallery-'+String(n).padStart(3,'0')+'.webp';
-const commonVideos=[
-  ['media/videos/showreel.mp4','images/duet-hero.webp','Шоурил с мероприятий','Темп, импровизация и живой контакт с гостями.'],
-  ['media/videos/wedding-party.mp4','images/couple-dance.webp','Свадебная вечеринка','Фрагмент праздника без постановки и повторных дублей.']
-];
-const pages={
-  petr:{
-    title:'Пётр Демидов - ведущий мероприятий в Москве',description:'Пётр Демидов - ведущий свадеб, корпоративов и частных событий. Добрый юмор, живая импровизация и внимание к людям.',
-    logo:'Пётр Демидов',eyebrow:'Ведущий мероприятий · Москва',hero:'В центре вечера<br><i>ваши люди</i>',copy:'Добрый юмор, живая импровизация и внимание к людям.',image:'images/petr-hero.webp',alt:'Пётр Демидов - ведущий мероприятий',
-    portfolio:['Люди, эмоции,<br>живой момент','Не играю главную роль. Помогаю гостям чувствовать себя свободно, знакомиться и становиться ближе.'],gallery:[2,5,6,7,18,19,21,25,27,28,31,33,34,35,36,37,40,50,52,58,72].map(photo).concat(['images/petr-snape-stage.webp','images/petr-harry-potter-wedding.webp']),
-    videoCopy:'Фрагменты событий, где видно главное - реакцию людей и атмосферу в зале.',videos:commonVideos,
-    kicker:'Мой подход',approach:'Делаю звёздами вечера <em>вас и ваших гостей.</em> Сам остаюсь рядом, чтобы всё происходило легко и ненавязчиво.',
-    principles:[['Добрый юмор','Без неловкости, давления и шуток за чужой счёт.'],['Импровизация','Замечаю момент и реагирую сразу, а не прячусь за заученным текстом.'],['Личный сценарий','Изучаю пару и компанию, чтобы программа была именно про вас.']],
-    position:['Главные герои вечера - вы и ваши гости','Мне важно, чтобы после события вспоминали не ведущего, а людей, разговоры и моменты, которые стали общими.'],
-    values:[['Гости становятся ближе','Выстраиваю программу так, чтобы люди легко знакомились и узнавали друг друга. Особенно когда семьи и друзья встречаются впервые.'],['Церемония без штампов','Рассказываю историю пары простыми живыми словами - без придыхания, чужих метафор и «кораблей любви».'],['Спокойствие в деталях','За десять лет не опоздал ни на одно мероприятие. Ответственно готовлюсь и держу в голове весь ход вечера.'],['От одного гостя до большого зала','Работал для аудитории более 500 человек и проводил выступление для одного ребёнка. Умею быть уместным в любом масштабе.'],['Опыт за пределами свадеб','Создавал шоу-программы для музеев Москвы и проводил экскурсии - умею собирать историю и удерживать внимание.']],
-    special:['Особый формат','Да, образ Северуса Снейпа на фото настоящий. Могу провести в нём тематическое событие и особенно жду свадьбу в стиле Гарри Поттера - думаю, это будет по-настоящему фантастический вечер.'],
-    formatsLead:'От камерного ужина до большого события - сохраняю лёгкость, темп и живой контакт с залом.',formats:[['Свадьбы','Личная история, добрый юмор и общение, после которого гости становятся ближе.'],['Для компаний','Динамично, современно и уместно для конкретной команды.'],['Частные события','Тепло и естественно - с вниманием к каждому человеку в зале.']],
-    feature:['Один ведущий.<br>Или дуэт.','Если событию нужны две разные энергии, работаем вместе с Натальей. Единая подготовка, естественный диалог и больше внимания к гостям.','duet/','Посмотреть страницу дуэта'],
-    footer:'Пётр Демидов',phones:[['Пётр','+7 926 067-66-01','79260676601']],contact:'Расскажите о событии. Выберите удобный мессенджер - сообщение с информацией о событии откроется готовым для отправки Петру.'
-  },
-  natalia:{
-    title:'Наталья Демидова - ведущая мероприятий в Москве',description:'Наталья Демидова - ведущая свадеб, церемоний и частных событий. Интеллигентно, легко и эмоционально.',
-    logo:'Наталья Демидова',eyebrow:'Ведущая мероприятий · Москва',hero:'Эмоции, которые<br><i>остаются с вами</i>',copy:'Веду интеллигентно, легко и эмоционально. Чувствую людей и создаю событие, в котором комфортно каждому.',image:'images/natalia-hero-new.webp',alt:'Наталья Демидова - ведущая мероприятий',
-    portfolio:['Церемонии,<br>люди, чувства','Люблю моменты, когда взгляды говорят больше слов, а сценарий точно отражает характер пары.'],gallery:[1,4,12,17,20,22,23,32,38,41,43,44,48,49,51,53,55,56,57,73].map(photo),
-    videoCopy:'Живые фрагменты работы и атмосферы праздника. Видео «О нас» остаётся только на странице дуэта.',videos:commonVideos,
-    kicker:'Мой подход',approach:'Бережно веду гостей через вечер, а вашу историю превращаю в <em>живой и эмоциональный сценарий.</em>',
-    principles:[['Чувствую людей','Вижу, кому хочется быть в центре внимания, а кому приятнее наблюдать.'],['Люблю церемонии','Пишу их специально для пары и проживаю важные моменты вместе с молодожёнами.'],['Внимание каждому','От бабушек и дедушек до детей - всем должно быть интересно и комфортно.']],
-    position:['Событие с драматургией и настоящими эмоциями','Я отвечаю за ваше спокойствие и за то, чтобы у вечера был характер: узнаваемый, тёплый и собранный вокруг вашей истории.'],
-    values:[['Церемония именно о вас','Появление невесты и взгляды пары - не формальный блок, а один из главных эмоциональных моментов дня.'],['Фишки, которые отражают пару','Придумываю детали не ради эффекта, а чтобы в них узнавались ваши привычки, чувства и юмор.'],['Деликатная работа с гостями','Не вытаскиваю человека в центр против его желания. Вовлекаю мягко и точно чувствую границы.'],['Режиссура вечера','Собираю завязку, развитие, кульминацию и запоминающийся финал, чтобы событие ощущалось цельным.'],['Ответственность за спокойствие','Продумываю сценарий и держу процесс так, чтобы вы могли быть внутри своего праздника.']],
-    special:['Моя любимая часть','Церемония - момент, который невозможно повторить. Мне важно, чтобы слова звучали просто, точно и по-настоящему.'],
-    formatsLead:'Свадьба, церемония или событие компании - в каждом формате сохраняю такт, эмоцию и ясный ритм.',formats:[['Свадьбы и церемонии','Авторский текст, точная драматургия и тёплое внимание к семье и друзьям.'],['Для компаний','Живо, современно и с пониманием характера конкретной команды.'],['Частные события','Лёгкое общение и бережное вовлечение гостей разных поколений.']],
-    feature:['Сольное ведение.<br>Или дуэт.','Вместе с Петром мы соединяем эмоциональную режиссуру, добрый юмор и быструю импровизацию в одном сценарии.','duet/','Посмотреть страницу дуэта'],
-    footer:'Наталья Демидова',phones:[['Наталья','+7 905 523-95-30','79055239530']],contact:'Расскажите о событии. Выберите удобный мессенджер - сообщение с информацией о событии откроется готовым для отправки Наталье.'
-  },
-  duet:{
-    title:'Пётр и Наталья Демидовы - дуэт ведущих в Москве',description:'Пётр и Наталья Демидовы - дуэт ведущих. Две сильные стороны, единый сценарий и больше внимания к людям.',
-    logo:'Пётр & Наталья',eyebrow:'Дуэт ведущих · Москва',hero:'Два характера.<br><i>Один ритм вечера.</i>',copy:'Добрый юмор Петра, эмоциональная режиссура Натальи и общее внимание к людям. Дуэт, который слышит друг друга и замечает больше.',image:'images/duet-hero.webp',alt:'Пётр и Наталья Демидовы - дуэт ведущих',
-    portfolio:['Вместе в кадре.<br>Вместе в моменте.','Совместная работа, молодожёны, гости и декор - полная атмосфера события, а не только сцена.'],gallery:[3,8,9,10,11,13,14,15,16,24,26,29,30,39,42,45,46,47,54,59,60,61,62,63,64,65,66,67,68,69,70,71,74].map(photo),
-    videoCopy:'Здесь собраны все три видео, включая отдельное знакомство «О нас».',videos:[commonVideos[0],['media/videos/about-us.mp4','images/duet-dialogue.webp','О нас','Знакомство с дуэтом без формальностей.'],commonVideos[1]],
-    kicker:'Почему дуэт',approach:'Два поля внимания, две реакции и один сценарий. Пока один ведёт зал, второй <em>видит детали и поддерживает момент.</em>',
-    principles:[['Единая подготовка','Вместе изучаем пару и собираем одну цельную программу.'],['Живой диалог','Не делим реплики пополам - слышим друг друга и свободно импровизируем.'],['Больше внимания','Одновременно держим ритм зала, замечаем гостей и поддерживаем героев события.']],
-    position:['Не «в два раза больше ведущих», а больше возможностей','Ценность дуэта не в количестве голосов. Она в гибкости: мы быстрее меняем темп, мягче работаем с разными гостями и создаём объёмный живой вечер.'],
-    values:[['Пётр снимает напряжение','Добрый юмор, импровизация и лёгкое общение помогают гостям раскрываться и становиться ближе.'],['Наталья выстраивает эмоцию','Чувствует людей, пишет церемонии и собирает вечер как режиссёр - с развитием и сильным финалом.'],['Мы подхватываем друг друга','Если момент меняется, один продолжает общение, а второй уже перестраивает следующий шаг.'],['Комфорт для разных поколений','Можно одновременно быть рядом с молодожёнами, удерживать большой зал и уделять внимание тихим гостям.'],['Один сценарий и одна ответственность','Вы не координируете двух отдельных ведущих. Мы готовимся вместе и отвечаем за результат как команда.']],
-    special:['Когда дуэт особенно уместен','Большой зал, насыщенная программа, много поколений гостей, церемония и вечеринка в одном дне - там две сильные стороны дают особенно заметный результат.'],
-    formatsLead:'Мы адаптируем распределение ролей под событие, а не заставляем событие подстраиваться под привычный сценарий.',formats:[['Свадьбы','Церемония, личная история пары, добрый юмор и внимание к обеим семьям.'],['Для компаний','Два ведущих легче держат большой зал, разные команды и насыщенную программу.'],['Большие события','Больше свободы в зале, на сцене и в неожиданных моментах без потери общего ритма.']],
-    feature:['Два ведущих.<br>Одна команда.','Вы получаете общий сценарий, две сильные стороны и спокойствие: в каждый момент кто-то ведёт действие, а кто-то уже замечает, что нужно дальше.','#contact','Обсудить событие с дуэтом'],
-    footer:'Пётр и Наталья Демидовы',phones:[['Пётр','+7 926 067-66-01','79260676601'],['Наталья','+7 905 523-95-30','79055239530']],contact:'Выберите, кому удобнее написать и через какой мессенджер. Пётр и Наталья оба знают проект и ведут подготовку вместе.'
-  }
-};
-const p=pages[pageKey],$=id=>document.getElementById(id),set=(id,v,html=false)=>html?$(id).innerHTML=v:$(id).textContent=v;
-document.title=p.title;document.querySelector('meta[name=description]').content=p.description;
-set('siteLogo',p.logo+'<span>.</span>',true);set('heroEyebrow',p.eyebrow);set('heroTitle',p.hero,true);set('heroCopy',p.copy);set('portfolioTitle',p.portfolio[0],true);set('portfolioCopy',p.portfolio[1]);set('videoCopy',p.videoCopy);set('approachKicker',p.kicker);set('approachTitle',p.approach,true);set('positionTitle',p.position[0]);set('positionLead',p.position[1]);set('formatsLead',p.formatsLead);set('featureTitle',p.feature[0],true);set('featureCopy',p.feature[1]);set('featureLink',p.feature[3]);set('contactCopy',p.contact);set('footerName',p.footer);
-$('heroImage').src=p.image;$('heroImage').alt=p.alt;document.querySelector('[data-host='+pageKey+']').classList.add('active');$('featureLink').href=p.feature[2];if(p.feature[2].startsWith('#'))$('featureLink').onclick=e=>{e.preventDefault();$('contact').scrollIntoView({behavior:'smooth'})};
-p.principles.forEach(([a,b])=>$('principles').insertAdjacentHTML('beforeend','<article class="principle reveal"><b>'+a+'</b><p>'+b+'</p></article>'));
-p.values.forEach(([a,b],i)=>$('valueList').insertAdjacentHTML('beforeend','<article class="value-item reveal" style="--i:'+i+'"><small>0'+(i+1)+'</small><div><h3>'+a+'</h3><p>'+b+'</p></div></article>'));
-$('specialNote').innerHTML='<b>'+p.special[0]+'</b><p>'+p.special[1]+'</p>';
-p.formats.forEach(([a,b],i)=>$('formatList').insertAdjacentHTML('beforeend','<article class="format"><small>0'+(i+1)+'</small><h3>'+a+'</h3><p>'+b+'</p></article>'));
-p.gallery.forEach((src,i)=>{const card=document.createElement('figure'),img=document.createElement('img');card.className='portfolio-card';img.src=src;img.alt=p.alt+', фотография '+(i+1);img.loading='lazy';img.decoding='async';img.onload=()=>card.style.setProperty('--ratio',Math.max(.66,Math.min(1.85,img.naturalWidth/img.naturalHeight)));card.onclick=()=>{$('lightboxImage').src=img.src;$('lightbox').classList.add('open');document.body.style.overflow='hidden'};card.append(img);$('portfolioTrack').append(card)});
-const update=()=>{const cards=[...$('portfolioTrack').children],center=$('portfolioTrack').scrollLeft+$('portfolioTrack').clientWidth/2;let at=0,best=Infinity;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft+c.offsetWidth/2-center);if(d<best){best=d;at=i}});set('portfolioCounter',(at+1)+' / '+cards.length)};update();$('portfolioTrack').onscroll=update;$('portfolioPrev').onclick=()=>$('portfolioTrack').scrollBy({left:-Math.min(innerWidth*.72,680),behavior:'smooth'});$('portfolioNext').onclick=()=>$('portfolioTrack').scrollBy({left:Math.min(innerWidth*.72,680),behavior:'smooth'});
-const close=()=>{$('lightbox').classList.remove('open');$('lightboxImage').removeAttribute('src');document.body.style.overflow=''};$('lightboxClose').onclick=close;$('lightbox').onclick=e=>{if(e.target===$('lightbox'))close()};addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-if(p.videos.length){$('videos').hidden=false;$('videoGrid').classList.add('count-'+p.videos.length);p.videos.forEach(([src,poster,title,copy])=>$('videoGrid').insertAdjacentHTML('beforeend','<figure class="video-card"><video controls playsinline preload="metadata" poster="'+poster+'"><source src="'+src+'" type="video/mp4"></video><figcaption><strong>'+title+'</strong><span>'+copy+'</span></figcaption></figure>'))}
-p.phones.forEach(([name,display,digits])=>{$('contactNumbers').insertAdjacentHTML('beforeend','<a href="tel:+'+digits+'">'+name+': '+display+'</a>');$('footerPhones').insertAdjacentHTML('beforeend','<a href="tel:+'+digits+'">'+display+'</a>');$('recipient').insertAdjacentHTML('beforeend','<option value="'+digits+'">'+name+' - '+display+'</option>')});$('recipientField').hidden=p.phones.length===1;
-document.querySelectorAll('[data-anchor]').forEach(a=>a.onclick=e=>{e.preventDefault();$(a.dataset.anchor).scrollIntoView({behavior:'smooth'})});
-document.querySelectorAll('.host-choice').forEach(a=>a.onclick=e=>{if(a.classList.contains('active')){e.preventDefault();scrollTo({top:0,behavior:'smooth'})}else if(!matchMedia('(prefers-reduced-motion:reduce)').matches){e.preventDefault();document.body.classList.add('leaving');setTimeout(()=>location.href=a.href,470)}});
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
-let busy=false;addEventListener('scroll',()=>{if(busy)return;busy=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;$('progress').style.transform='scaleX('+(max?scrollY/max:0)+')';if(scrollY<innerHeight&&!matchMedia('(prefers-reduced-motion:reduce)').matches)$('heroImage').style.translate='0 '+scrollY*.08+'px';busy=false})},{passive:true});
-const messengerNames={whatsapp:'WhatsApp',telegram:'Telegram',max:'MAX'};document.querySelectorAll('input[name=messenger]').forEach(input=>input.onchange=()=>{const label=messengerNames[input.value];set('submitButton','Перейти в '+label);set('formNote',input.value==='max'?'Сайт не сохраняет данные. В MAX откроется готовое сообщение - останется выбрать нужный чат.':'Сайт не сохраняет данные. После нажатия откроется '+label+' с готовым сообщением.')});$('leadForm').onsubmit=e=>{e.preventDefault();if(!$('leadForm').reportValidity())return;const f=new FormData($('leadForm')),digits=f.get('recipient')||p.phones[0][2],name=p.phones.find(x=>x[2]===digits)?.[0]||p.phones[0][0],interest=pageKey==='duet'?'дуэт ведущих':pageKey==='natalia'?'Наталью как ведущую':'Петра как ведущего',lines=['Здравствуйте, '+name+'! Хочу обсудить мероприятие.','','Интересует: '+interest,'Имя: '+f.get('name'),'Телефон: '+f.get('phone'),'Формат: '+f.get('type'),'Дата: '+(f.get('date')||'пока не определена'),'Детали: '+(f.get('details')||'обсудим лично')],message=lines.join('\n'),messenger=f.get('messenger')||'whatsapp';let url;if(messenger==='telegram')url='https://t.me/+'+digits+'?text='+encodeURIComponent(message);else if(messenger==='max')url='https://max.ru/:share?text='+encodeURIComponent(message);else url='https://wa.me/'+digits+'?text='+encodeURIComponent(message);open(url,'_blank','noopener')};set('year',new Date().getFullYear());
-</script>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span>© <span id="year">2026</span> Наталья Демидова</span>
+      <div class="footer-links"><a href="https://t.me/demi_nata" target="_blank" rel="noopener">Telegram</a><a href="https://vk.ru/duetpena" target="_blank" rel="noopener">VK</a><a href="https://msk.gorko.ru/%D1%82%D0%B0%D0%BC%D0%B0%D0%B4%D0%B0/1999137/" target="_blank" rel="noopener">Горько</a></div>
+      <a href="../privacy/">Персональные данные</a>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="button" href="#contact">Проверить свою дату</a></div>
+
+  <script>
+    const $ = (selector, scope = document) => scope.querySelector(selector);
+    const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+
+    $('#year').textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+    $$('.reveal').forEach(element => revealObserver.observe(element));
+
+    let scrollBusy = false;
+    addEventListener('scroll', () => {
+      if (scrollBusy) return;
+      scrollBusy = true;
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        $('#progress').style.transform = `scaleX(${max ? scrollY / max : 0})`;
+        scrollBusy = false;
+      });
+    }, {passive: true});
+
+    const gallery = $('#galleryTrack');
+    const galleryStep = () => Math.min(innerWidth * .78, 560);
+    $('#galleryPrev').addEventListener('click', () => gallery.scrollBy({left: -galleryStep(), behavior: 'smooth'}));
+    $('#galleryNext').addEventListener('click', () => gallery.scrollBy({left: galleryStep(), behavior: 'smooth'}));
+
+    const contacts = {
+      petr: {name: 'Пётр', phone: '79260676601', telegram: 'p_demidov'},
+      natalia: {name: 'Наталья', phone: '79055239530', telegram: 'demi_nata'}
+    };
+
+    $('#leadForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const contact = contacts[data.get('recipient')];
+      const message = [
+        `Здравствуйте, ${contact.name}! Хочу проверить дату мероприятия.`,
+        '',
+        `Имя: ${data.get('name')}`,
+        `Телефон: ${data.get('phone')}`,
+        `Дата: ${data.get('date') || 'пока не определена'}`,
+        `Формат: ${data.get('format')}`,
+        `Гостей: ${data.get('guests') || 'уточню позже'}`,
+        `Город или площадка: ${data.get('city') || 'уточню позже'}`,
+        `Связаться: ${data.get('channel')}`
+      ].join('\n');
+      const encoded = encodeURIComponent(message);
+      let url;
+      if (data.get('channel') === 'telegram') {
+        url = `https://t.me/${contact.telegram}?text=${encoded}`;
+      } else if (data.get('channel') === 'max') {
+        url = `https://max.ru/:share?text=${encoded}`;
+      } else {
+        url = `https://wa.me/${contact.phone}?text=${encoded}`;
+      }
+      open(url, '_blank', 'noopener');
+    });
+  </script>
 </body>
 </html>
