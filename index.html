@@ -6,6 +6,9 @@
   <title>Пётр и Наталья Демидовы — дуэт ведущих в Москве</title>
   <meta name="description" content="Пётр и Наталья Демидовы — дуэт ведущих для свадеб, корпоративов и частных событий в Москве и Московской области. Добрый юмор, личный сценарий и внимание к каждому гостю.">
   <meta name="theme-color" content="#090a0c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0c'/%3E%3Cpath d='M17 45V19h10c7 0 11 3 11 9 0 5-4 9-11 9h-4v8h-6Zm6-13h4c3 0 5-1 5-4s-2-4-5-4h-4v8Z' fill='%23d8b568'/%3E%3Cpath d='M40 19h6v26h-6z' fill='%23e8e1d3'/%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
@@ -202,6 +205,12 @@
     .footer-links{display:flex;gap:18px;flex-wrap:wrap}
     .mobile-cta{display:none}
 
+    body{font-family:"Manrope","Helvetica Neue",Arial,sans-serif}
+    :where(h1,.section-title,.trust-item strong,.fear h3,.duo-quote p,.duo-item h3,.review strong,.process-step h3,.price,.bonus strong,.contact h2,.faq summary){font-family:"Montserrat","Helvetica Neue",Arial,sans-serif}
+    h1,.section-title,.contact h2{font-weight:500;letter-spacing:-.045em}
+    .duo-quote .duo-copy{margin-top:18px;color:var(--muted);font-family:"Manrope","Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.62;letter-spacing:0}
+    .duo-quote .duo-signoff{color:var(--gold-light);font-weight:600}
+
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
     .reveal.visible{opacity:1;transform:none}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.gallery-card img{transition:none}.trust-track{animation:none}.trust-group[aria-hidden="true"]{display:none}}
@@ -242,7 +251,7 @@
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
           <div class="hero-eyebrow">Дуэт ведущих · Москва и Московская область</div>
-          <h1>Два характера.<em>Один ритм вечера.</em></h1>
+          <h1>Два взгляда.<em>Одна история.</em></h1>
           <p class="hero-text">Пётр отвечает за добрый юмор и быструю импровизацию. Наталья чувствует эмоцию вечера и собирает его как режиссёр. Вместе мы держим внимание зала и остаёмся рядом с вами.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Проверить свою дату</a>
@@ -286,13 +295,13 @@
 
     <section class="section cream">
       <div class="wrap">
-        <div class="section-kicker reveal">Чтобы всем было комфортно</div>
-        <h2 class="section-title reveal">О чём переживают заказчики</h2>
+        <div class="section-kicker reveal">Наш подход</div>
+        <h2 class="section-title reveal">Что мы делаем для вашего события</h2>
         <div class="fear-grid">
-          <article class="fear reveal"><span>01</span><h3>«Гостям будет неловко»</h3><p>Используем добрый юмор и простые механики. Участие остаётся добровольным, а шутки не ставят людей в неудобное положение.</p></article>
-          <article class="fear reveal"><span>02</span><h3>«Программа не подойдёт нашей аудитории»</h3><p>Учитываем возраст, интересы, отношения внутри компании и формат события. Меняем темп по реакции людей.</p></article>
-          <article class="fear reveal"><span>03</span><h3>«Ведущие перетянут внимание на себя»</h3><p>В центре события остаются заказчик, герои вечера и гости. Мы поддерживаем происходящее и помогаем людям общаться.</p></article>
-          <article class="fear reveal"><span>04</span><h3>«Сценарий будет универсальным»</h3><p>Изучаем пару, компанию или проект агентства. В программу входят ваши истории, задачи, ценности и характер аудитории.</p></article>
+          <article class="fear reveal"><span>01</span><h3>Создаём комфорт для гостей</h3><p>Используем добрый юмор и простые механики. Каждый сам выбирает комфортную степень участия.</p></article>
+          <article class="fear reveal"><span>02</span><h3>Ставим вашу индивидуальность в центр</h3><p>Знаем тренды, но программу создаём вокруг вашего характера, историй и пожеланий. Тренды проходят, а индивидуальность всегда в моде.</p></article>
+          <article class="fear reveal"><span>03</span><h3>Находим общий язык со всеми</h3><p>Общаемся с гостями разных возрастов и характеров. Даже с котом, который ненавидит людей.</p></article>
+          <article class="fear reveal"><span>04</span><h3>Создаём программу на годы</h3><p>Продумываем праздник так, чтобы спустя годы вы снова выбрали именно такой вечер.</p></article>
         </div>
       </div>
     </section>
@@ -301,7 +310,8 @@
       <div class="wrap duo-value">
         <div class="duo-quote reveal">
           <div class="section-kicker">Почему дуэт</div>
-          <p>Пока Пётр разговаривает с залом, Наталья готовит следующий момент. Провисаний нет, и каждый гость получает внимание.</p>
+          <p>С 2019 года мы вместе в жизни и творчестве. Поэтому в нашей работе вдвое больше любви, внимания и идей.</p>
+          <p class="duo-copy duo-signoff">Мы не в рейтинге Top100. Мы в сердцах наших молодожёнов.</p>
         </div>
         <div>
           <h2 class="section-title reveal">Что даёт второй ведущий</h2>
