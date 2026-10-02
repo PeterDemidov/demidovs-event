@@ -452,11 +452,11 @@
             <div class="channel-options">
               <label class="channel-option"><input type="radio" name="channel" value="whatsapp" checked><span>WhatsApp</span></label>
               <label class="channel-option"><input type="radio" name="channel" value="telegram"><span>Telegram</span></label>
-              <label class="channel-option"><input type="radio" name="channel" value="max"><span>MAX</span></label>
+              <label class="channel-option"><input type="radio" name="channel" value="call"><span>Позвонить</span></label>
             </div>
           </fieldset>
           <label class="consent"><input type="checkbox" name="consent" required><span>Я даю <a href="../privacy/#consent" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="../privacy/" target="_blank" rel="noopener">политикой обработки персональных данных</a>.</span></label>
-          <div class="submit-wrap"><button class="button" type="submit">Проверить свою дату</button><p class="form-note" id="formNote">Откроется выбранный способ связи с готовым сообщением.</p></div>
+          <div class="submit-wrap"><button class="button" type="submit">Проверить свою дату</button><p class="form-note" id="formNote">Для WhatsApp и Telegram подготовим сообщение. При выборе звонка откроется нужный номер.</p></div>
         </form>
       </div>
     </section>
@@ -530,8 +530,8 @@
       let url;
       if (data.get('channel') === 'telegram') {
         url = `https://t.me/${contact.telegram}?text=${encoded}`;
-      } else if (data.get('channel') === 'max') {
-        url = `https://max.ru/:share?text=${encoded}`;
+      } else if (data.get('channel') === 'call') {
+        url = `tel:+${contact.phone}`;
       } else {
         url = `https://wa.me/${contact.phone}?text=${encoded}`;
       }
