@@ -241,6 +241,39 @@
       .mobile-cta .button{width:100%;min-height:48px}
     }
     @media (max-width:420px){h1{font-size:3.15rem;line-height:1.02}.section-title{font-size:2.45rem;line-height:1.08}.hero-role{font-size:1.12rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3rem;line-height:1.02}}
+
+    /* Monochrome palette with a single red accent */
+    :root{--ink:#050505;--ink-soft:#0d0d0d;--card:#151515;--paper:#f4f4f2;--paper-deep:#e8e8e5;--gold:#c20a2f;--gold-light:#f02b4f;--orange:#c20a2f;--silver:#d8d8d5;--muted:#aaa9a6;--line:rgba(255,255,255,.18);--dark-line:rgba(0,0,0,.18);--radius:6px;--shadow:0 24px 70px rgba(0,0,0,.28)}
+    body:before{background:none}
+    .section{border-top:1px solid var(--line)}
+    .section-kicker{display:flex;align-items:center;gap:10px;color:var(--gold)}
+    .section-kicker:before{content:"";width:22px;height:3px;background:var(--gold)}
+    .button{border:1px solid var(--gold);border-radius:3px;background:var(--gold);color:#fff;box-shadow:none;letter-spacing:.055em;text-transform:uppercase}
+    .button:hover{background:#fff;color:#080808;border-color:#fff;box-shadow:none}
+    .button:focus-visible,.icon-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline-color:var(--gold-light)}
+    .progress{background:var(--gold)}
+    .switcher{background:rgba(5,5,5,.9)}
+    .switcher a.active{position:relative;color:#fff;background:rgba(194,10,47,.13)}
+    .switcher a.active:after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;background:var(--gold)}
+    .hero-role,.trust-item strong{color:var(--gold-light)}
+    .cream{background:var(--paper);color:#101010}
+    .cream .section-kicker,.fear span,.review summary,.price-label{color:var(--gold)}
+    .cream .section-lead{color:#5b5b58}
+    .fear,.review,.price-card{background:#fff}
+    .duo-quote{border-left:4px solid var(--gold);background:#101010}
+    .duo-quote .duo-signoff,.duo-item small,.process-step small,.primary .price-label,.price-list li:before,.faq summary:after{color:var(--gold-light)}
+    .icon-button{border-radius:3px}
+    .icon-button:hover{border-color:var(--gold);background:var(--gold);color:#fff}
+    .price-card.primary{background:#0c0c0c;border-color:#0c0c0c}
+    .bonus{border-color:rgba(194,10,47,.65);background:rgba(194,10,47,.1)}
+    .bonus strong{color:#ff526d}
+    .contact{background:#090909}
+    .contact-links a{color:#ff526d;border-color:rgba(194,10,47,.65)}
+    input,select,textarea,.channel-option span{border-radius:3px;background:#151515}
+    .channel-option input:checked+span{border-color:var(--gold);background:rgba(194,10,47,.16);color:#ff526d}
+    .consent input{accent-color:var(--gold)}
+    .social-links a:hover{color:#ff526d;border-color:var(--gold)}
+    @media (max-width:720px){.mobile-cta{border-color:rgba(194,10,47,.7);border-radius:5px;background:rgba(5,5,5,.94);box-shadow:none}}
   </style>
 </head>
 <body>
