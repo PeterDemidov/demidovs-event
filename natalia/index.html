@@ -205,9 +205,12 @@
     body{font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif}
     h1,.section-title,.trust-item strong,.fear h3,.duo-quote p,.duo-item h3,.review strong,.process-step h3,.price,.bonus strong,.contact h2,.faq summary{font-family:"Oswald","Arial Narrow",Arial,sans-serif}
     h1,.section-title,.contact h2{font-weight:500;letter-spacing:-.025em;text-transform:uppercase}
-    h1{font-size:clamp(4.2rem,9.5vw,9.4rem);line-height:.86}
-    .section-title{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.92}
-    .hero-role{margin:15px 0 0;color:var(--gold-light);font:400 clamp(1.25rem,2.4vw,2rem)/1 "Roboto Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.045em;text-transform:uppercase}
+    h1{max-width:780px;font-size:clamp(3.8rem,8vw,7.8rem);line-height:1;letter-spacing:-.015em;text-wrap:balance;overflow-wrap:normal}
+    .section-title{max-width:920px;font-size:clamp(2.65rem,5.3vw,5.1rem);line-height:1.08;letter-spacing:-.012em;overflow-wrap:normal}
+    .hero-role{margin:22px 0 0;color:var(--gold-light);font:400 clamp(1.2rem,2.2vw,1.85rem)/1.2 "Roboto Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.045em;text-transform:uppercase}
+    .hero-text{margin-top:25px;line-height:1.5}
+    .fear h3,.duo-item h3,.process-step h3{line-height:1.18}
+    .contact h2{line-height:1.02}
     .duo-quote .duo-copy{margin-top:18px;color:var(--muted);font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;font-size:1rem;line-height:1.62;letter-spacing:0}
     .duo-quote .duo-signoff{color:var(--gold-light);font-weight:600}
     .social-links{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border-top:1px solid var(--line)}
@@ -235,7 +238,7 @@
       .mobile-cta{position:fixed;z-index:80;display:block;left:14px;right:14px;bottom:max(12px,env(safe-area-inset-bottom));padding:7px;border:1px solid rgba(212,174,98,.32);border-radius:999px;background:rgba(9,10,12,.9);backdrop-filter:blur(18px);box-shadow:0 12px 45px rgba(0,0,0,.45)}
       .mobile-cta .button{width:100%;min-height:48px}
     }
-    @media (max-width:420px){h1{font-size:3.55rem}.section-title{font-size:2.7rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3.2rem}}
+    @media (max-width:420px){h1{font-size:3.15rem;line-height:1.02}.section-title{font-size:2.45rem;line-height:1.08}.hero-role{font-size:1.12rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3rem;line-height:1.02}}
   </style>
 </head>
 <body>
@@ -253,7 +256,6 @@
       <div class="hero-media" style="--hero-image:url('../images/natalia-hero-new.webp')"><img src="../images/natalia-hero-new.webp" alt="Наталья Демидова ведёт мероприятие" width="1359" height="2048"></div>
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
-          <div class="hero-eyebrow">Ведущая мероприятий · Москва и Московская область</div>
           <h1>Наталья Демидова</h1>
           <div class="hero-role">Ведущая мероприятий</div>
           <p class="hero-text">Веду интеллигентно, легко и эмоционально. Чувствую людей, бережно работаю с гостями и создаю сценарий, который отражает вашу историю.</p>
