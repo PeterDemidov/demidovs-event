@@ -303,6 +303,35 @@
     .reviews-grid::-webkit-scrollbar{display:none}
     .review{min-height:100%;scroll-snap-align:start;scroll-snap-stop:always}
     @media (max-width:720px){.reviews-head{align-items:flex-start;flex-direction:column}.reviews-grid{grid-template-columns:none;grid-auto-columns:min(88vw,420px)}}
+    @media (max-width:720px){
+      body{font-size:15px;line-height:1.56}
+      .wrap{width:min(100% - 28px,1200px)}
+      .switcher-inner{width:100%}
+      .switcher a{min-width:0;padding:10px 5px;font-size:.67rem;overflow-wrap:anywhere}
+      .hero{min-height:max(100svh,680px);align-items:end}
+      .hero-content{width:100%;padding:116px 0 46px}
+      .hero-copy{width:100%;max-width:none}
+      h1{max-width:100%;font-size:clamp(2.7rem,12.6vw,3.45rem);line-height:.98;letter-spacing:-.018em;text-align:left;text-wrap:balance;overflow-wrap:normal}
+      .hero-role{max-width:100%;margin-top:16px;font-size:1.02rem;line-height:1.25;letter-spacing:.025em}
+      .hero-text{max-width:100%;margin:18px 0 0;font-size:1rem;line-height:1.46}
+      .hero-actions,.hero-role + .hero-actions{width:100%;margin-top:24px;gap:12px;align-items:flex-start}
+      .hero-actions .button{width:min(100%,330px)}
+      .hero-note{display:block;max-width:330px;line-height:1.4}
+      .section-title{max-width:100%;font-size:clamp(2.15rem,10.8vw,3rem);line-height:1.04;letter-spacing:-.008em;text-wrap:balance;overflow-wrap:break-word}
+      .section-lead{max-width:100%;margin-top:20px;line-height:1.5}
+      .duo-item{grid-template-columns:38px minmax(0,1fr);gap:14px;padding:24px 0}
+      .duo-item h3,.process-step h3{overflow-wrap:break-word}
+      .review{padding:24px 20px}
+      .contact h2{max-width:100%;font-size:clamp(2.45rem,12vw,3.25rem);overflow-wrap:break-word}
+      form,.contact-grid,.pricing-grid,.process-grid,.reviews-grid>*{min-width:0}
+    }
+    @media (max-width:380px){
+      .switcher a{font-size:.61rem}
+      h1{font-size:2.55rem}
+      .hero-role{font-size:.94rem}
+      .hero-actions .button{padding-inline:16px;font-size:.86rem}
+      .section-title{font-size:2.15rem}
+    }
     @media (prefers-reduced-motion:reduce){.switcher,.hero-media img,.hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{animation:none}}
   </style>
 </head>
