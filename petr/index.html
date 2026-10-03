@@ -18,7 +18,7 @@
     "jobTitle": "Ведущий мероприятий",
     "description": "Ведущий свадеб, корпоративов и частных событий в Москве и Московской области.",
     "url": "https://peterdemidov.github.io/demidovs-event/petr/",
-    "image": "https://peterdemidov.github.io/demidovs-event/images/petr-hero-premium.jpg",
+    "image": "https://peterdemidov.github.io/demidovs-event/images/petr-hero-original.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Москва",
@@ -274,9 +274,38 @@
     .consent input{accent-color:var(--gold)}
     .social-links a:hover{color:#ff6b85;border-color:var(--gold)}
     @media (max-width:720px){.mobile-cta{border-color:rgba(229,43,80,.7);border-radius:5px;background:rgba(5,5,5,.94);box-shadow:none}}
+
+    /* Personal pages use a light first screen */
+    .personal-page .hero{background:#f4f4f2;color:#0b0b0b}
+    .personal-page .hero-media{background:#f4f4f2}
+    .personal-page .hero-media:before{filter:blur(28px) grayscale(.35);opacity:.12}
+    .personal-page .hero-media:after{background:linear-gradient(90deg,#f4f4f2 0%,rgba(244,244,242,.93) 42%,rgba(244,244,242,.14) 78%),linear-gradient(0deg,#f4f4f2 0%,transparent 26%)}
+    .personal-page .hero-media img{filter:saturate(.92) contrast(1.02)}
+    .personal-page .hero-role{color:var(--gold)}
+    .personal-page .hero-note{color:#62625f}
+    .personal-page .switcher{border-color:rgba(0,0,0,.14);background:rgba(244,244,242,.92)}
+    .personal-page .switcher a{border-color:rgba(0,0,0,.14);color:#5f5f5b}
+    .personal-page .switcher a:hover{color:#050505;background:rgba(0,0,0,.04)}
+    .personal-page .switcher a.active{color:#050505;background:rgba(229,43,80,.08)}
+    .personal-page .switcher small{color:#858580}
+
+    /* First-screen entrance: restrained, editorial and without a blank pause */
+    .hero-copy.reveal{opacity:1;transform:none}
+    .switcher{animation:hero-nav-in .55s var(--ease) both}
+    .hero-media img{will-change:transform,opacity,clip-path;animation:hero-photo-in 1.15s var(--ease) .08s both}
+    .hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{will-change:transform,opacity;animation:hero-copy-in .8s var(--ease) both}
+    .hero h1{animation-delay:.22s}
+    .hero .hero-role{animation-delay:.34s}
+    .hero .hero-text{animation-delay:.43s}
+    .hero .hero-actions{animation-delay:.52s}
+    @keyframes hero-nav-in{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+    @keyframes hero-photo-in{from{opacity:0;transform:translateX(36px) scale(1.025);clip-path:inset(0 0 0 18%)}to{opacity:1;transform:none;clip-path:inset(0)}}
+    @keyframes hero-copy-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @media (max-width:720px){.personal-page .hero-media:after{background:linear-gradient(0deg,#f4f4f2 4%,rgba(244,244,242,.9) 42%,rgba(244,244,242,.12) 78%)}}
+    @media (prefers-reduced-motion:reduce){.switcher,.hero-media img,.hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{animation:none}}
   </style>
 </head>
-<body>
+<body class="personal-page">
   <div class="progress" id="progress" aria-hidden="true"></div>
   <header class="switcher" aria-label="Выбор ведущих">
     <nav class="switcher-inner wrap">
@@ -288,7 +317,7 @@
 
   <main>
     <section class="hero" id="top">
-      <div class="hero-media" style="--hero-image:url('../images/petr-hero-premium.jpg')"><img src="../images/petr-hero-premium.jpg" alt="Пётр Демидов ведёт мероприятие" width="1350" height="2048"></div>
+      <div class="hero-media" style="--hero-image:url('../images/petr-hero-original.jpg')"><img src="../images/petr-hero-original.jpg" alt="Пётр Демидов ведёт мероприятие" width="1359" height="2048"></div>
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
           <h1>Пётр Демидов</h1>
