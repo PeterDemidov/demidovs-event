@@ -279,6 +279,20 @@
     .consent input{accent-color:var(--gold)}
     .social-links a:hover{color:#ff6b85;border-color:var(--gold)}
     @media (max-width:720px){.mobile-cta{border-color:rgba(229,43,80,.7);border-radius:5px;background:rgba(5,5,5,.94);box-shadow:none}}
+
+    /* First-screen entrance: restrained, editorial and without a blank pause */
+    .hero-copy.reveal{opacity:1;transform:none}
+    .switcher{animation:hero-nav-in .55s var(--ease) both}
+    .hero-media img{will-change:transform,opacity,clip-path;animation:hero-photo-in 1.15s var(--ease) .08s both}
+    .hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{will-change:transform,opacity;animation:hero-copy-in .8s var(--ease) both}
+    .hero h1{animation-delay:.22s}
+    .hero .hero-role{animation-delay:.34s}
+    .hero .hero-text{animation-delay:.43s}
+    .hero .hero-actions{animation-delay:.52s}
+    @keyframes hero-nav-in{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+    @keyframes hero-photo-in{from{opacity:0;transform:translateX(36px) scale(1.025);clip-path:inset(0 0 0 18%)}to{opacity:1;transform:none;clip-path:inset(0)}}
+    @keyframes hero-copy-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){.switcher,.hero-media img,.hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{animation:none}}
   </style>
 </head>
 <body>
