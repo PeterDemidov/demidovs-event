@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#090a0c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&amp;family=Roboto+Condensed:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090a0c'/%3E%3Cpath d='M17 45V19h10c7 0 11 3 11 9 0 5-4 9-11 9h-4v8h-6Zm6-13h4c3 0 5-1 5-4s-2-4-5-4h-4v8Z' fill='%23d8b568'/%3E%3Cpath d='M40 19h6v26h-6z' fill='%23e8e1d3'/%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
@@ -33,6 +33,7 @@
       "https://t.me/p_demidov",
       "https://t.me/demi_nata",
       "https://vk.ru/duetpena",
+      "https://www.instagram.com/duet_pena",
       "https://msk.gorko.ru/тамада/1999137/"
     ]
   }
@@ -205,11 +206,17 @@
     .footer-links{display:flex;gap:18px;flex-wrap:wrap}
     .mobile-cta{display:none}
 
-    body{font-family:"Manrope","Helvetica Neue",Arial,sans-serif}
-    :where(h1,.section-title,.trust-item strong,.fear h3,.duo-quote p,.duo-item h3,.review strong,.process-step h3,.price,.bonus strong,.contact h2,.faq summary){font-family:"Montserrat","Helvetica Neue",Arial,sans-serif}
-    h1,.section-title,.contact h2{font-weight:500;letter-spacing:-.045em}
-    .duo-quote .duo-copy{margin-top:18px;color:var(--muted);font-family:"Manrope","Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.62;letter-spacing:0}
+    body{font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif}
+    h1,.section-title,.trust-item strong,.fear h3,.duo-quote p,.duo-item h3,.review strong,.process-step h3,.price,.bonus strong,.contact h2,.faq summary{font-family:"Oswald","Arial Narrow",Arial,sans-serif}
+    h1,.section-title,.contact h2{font-weight:500;letter-spacing:-.025em;text-transform:uppercase}
+    h1{font-size:clamp(4.2rem,9.5vw,9.4rem);line-height:.86}
+    .section-title{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.92}
+    .hero-role{margin:15px 0 0;color:var(--gold-light);font:400 clamp(1.25rem,2.4vw,2rem)/1 "Roboto Condensed","Arial Narrow",Arial,sans-serif;letter-spacing:.045em;text-transform:uppercase}
+    .duo-quote .duo-copy{margin-top:18px;color:var(--muted);font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;font-size:1rem;line-height:1.62;letter-spacing:0}
     .duo-quote .duo-signoff{color:var(--gold-light);font-weight:600}
+    .social-links{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+    .social-links a{display:inline-flex;margin-right:24px;padding:15px 0 13px;border-bottom:1px solid var(--line);color:var(--paper);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1;text-transform:uppercase;transition:color .2s,border-color .2s}
+    .social-links a:hover{color:var(--gold-light);border-color:var(--gold)}
 
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
     .reveal.visible{opacity:1;transform:none}
@@ -232,7 +239,7 @@
       .mobile-cta{position:fixed;z-index:80;display:block;left:14px;right:14px;bottom:max(12px,env(safe-area-inset-bottom));padding:7px;border:1px solid rgba(212,174,98,.32);border-radius:999px;background:rgba(9,10,12,.9);backdrop-filter:blur(18px);box-shadow:0 12px 45px rgba(0,0,0,.45)}
       .mobile-cta .button{width:100%;min-height:48px}
     }
-    @media (max-width:420px){h1{font-size:3.25rem}.section-title{font-size:2.55rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3.2rem}}
+    @media (max-width:420px){h1{font-size:3.55rem}.section-title{font-size:2.7rem}.review,.fear{padding:24px}.price-card{padding:26px 22px}.contact h2{font-size:3.2rem}}
   </style>
 </head>
 <body>
@@ -251,7 +258,8 @@
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
           <div class="hero-eyebrow">Дуэт ведущих · Москва и Московская область</div>
-          <h1>Пётр и Наталья Демидовы<em>дуэт ведущих.</em></h1>
+          <h1>Пётр и Наталья Демидовы</h1>
+          <div class="hero-role">Дуэт ведущих</div>
           <p class="hero-text">Разный взгляд на одну историю. Пётр отвечает за добрый юмор и быструю импровизацию. Наталья чувствует эмоцию вечера и собирает его как режиссёр. Вместе мы держим внимание зала и остаёмся рядом с вами.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Проверить свою дату</a>
@@ -329,7 +337,7 @@
       <div class="wrap gallery-head">
         <div class="reveal">
           <div class="section-kicker">Портфолио</div>
-          <h2 class="section-title">Запечатлённые эмоции</h2>
+          <h2 class="section-title">Фото с мероприятий</h2>
         </div>
         <div class="gallery-controls" aria-label="Управление галереей">
           <button class="icon-button" id="galleryPrev" type="button" aria-label="Предыдущие фотографии">←</button>
@@ -465,6 +473,12 @@
             <a href="tel:+79260676601">Пётр: +7 926 067-66-01</a>
             <a href="tel:+79055239530">Наталья: +7 905 523-95-30</a>
           </div>
+          <nav class="social-links" aria-label="Социальные сети дуэта">
+            <a href="https://vk.ru/duetpena" target="_blank" rel="noopener">VK дуэта</a>
+            <a href="https://www.instagram.com/duet_pena?stkn=eTczZmR4NzNkNjQ=" target="_blank" rel="noopener">Instagram дуэта</a>
+            <a href="https://t.me/p_demidov" target="_blank" rel="noopener">Telegram Петра</a>
+            <a href="https://t.me/demi_nata" target="_blank" rel="noopener">Telegram Натальи</a>
+          </nav>
         </div>
         <form id="leadForm" class="reveal">
           <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="name" required placeholder="Имя"></div>
@@ -491,7 +505,7 @@
   <footer class="footer">
     <div class="wrap footer-row">
       <span>© <span id="year">2026</span> Пётр &amp; Наталья Демидовы</span>
-      <div class="footer-links"><a href="https://t.me/p_demidov" target="_blank" rel="noopener">Telegram Петра</a><a href="https://t.me/demi_nata" target="_blank" rel="noopener">Telegram Натальи</a><a href="https://vk.ru/duetpena" target="_blank" rel="noopener">VK</a><a href="https://msk.gorko.ru/%D1%82%D0%B0%D0%BC%D0%B0%D0%B4%D0%B0/1999137/" target="_blank" rel="noopener">Горько</a></div>
+      <div class="footer-links"><a href="https://t.me/p_demidov" target="_blank" rel="noopener">Telegram Петра</a><a href="https://t.me/demi_nata" target="_blank" rel="noopener">Telegram Натальи</a><a href="https://vk.ru/duetpena" target="_blank" rel="noopener">VK</a><a href="https://www.instagram.com/duet_pena?stkn=eTczZmR4NzNkNjQ=" target="_blank" rel="noopener">Instagram</a><a href="https://msk.gorko.ru/%D1%82%D0%B0%D0%BC%D0%B0%D0%B4%D0%B0/1999137/" target="_blank" rel="noopener">Горько</a></div>
       <a href="../privacy/">Персональные данные</a>
     </div>
   </footer>
