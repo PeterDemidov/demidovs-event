@@ -1,5 +1,7 @@
 const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+fs.mkdirSync('test-results', {recursive: true});
 const pages = ['', 'duet/', 'petr/', 'natalia/', 'privacy/'];
 const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:8765/';
 
@@ -16,6 +18,7 @@ const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:8765/';
         });
         await page.goto(base + path);
         assert.equal(await page.locator('h1').count(), 1);
+        console.log(`Layout ${path || '/'} at ${width}`);
         assert(await page.locator('h1').isVisible());
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
         assert(!overflow, `Horizontal overflow: ${path} at ${width}`);
@@ -39,6 +42,10 @@ const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:8765/';
           }
         }
         assert.deepEqual(errors, [], `Runtime/network errors: ${path} at ${width}`);
+        if (width === 390 && ['', 'petr/', 'natalia/'].includes(path)) {
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await page.screenshot({path: `test-results/${path ? path.replace('/', '') : 'duet'}-mobile.png`});
+        }
         await page.close();
       }
     }
@@ -66,6 +73,7 @@ const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:8765/';
           await page.route('https://wa.me/**', (route) => {navigations.push(route.request().url()); return route.fulfill({body: '<p>Test navigation intercepted</p>'});});
           await page.route('https://t.me/**', (route) => {navigations.push(route.request().url()); return route.fulfill({body: '<p>Test navigation intercepted</p>'});});
           await page.goto(base + path);
+          console.log(`Form ${path || '/'} ${recipient} ${channel}`);
           await page.locator('#name').fill('Тестовая заявка');
           await page.locator('#phone').fill('не телефон');
           await page.locator('#city').fill('Тестовая площадка');
