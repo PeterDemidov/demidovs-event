@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Наталья Демидова — ведущая мероприятий в Москве</title>
   <meta name="description" content="Наталья Демидова — ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области. Лёгкое общение, эмоции и продуманный сценарий.">
+  <link rel="canonical" href="https://demidovs.ru/natalia/">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Пётр &amp; Наталья Демидовы">
+  <meta property="og:title" content="Наталья Демидова — ведущая мероприятий в Москве">
+  <meta property="og:description" content="Наталья Демидова — ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области. Лёгкое общение, эмоции и продуманный сценарий.">
+  <meta property="og:url" content="https://demidovs.ru/natalia/">
+  <meta property="og:image" content="https://demidovs.ru/images/natalia-hero-new.webp">
+  <meta property="og:image:alt" content="Наталья Демидова — ведущая мероприятий в Москве">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Наталья Демидова — ведущая мероприятий в Москве">
+  <meta name="twitter:description" content="Наталья Демидова — ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области. Лёгкое общение, эмоции и продуманный сценарий.">
+  <meta name="twitter:image" content="https://demidovs.ru/images/natalia-hero-new.webp">
   <meta name="theme-color" content="#090a0c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +31,13 @@
     "name": "Наталья Демидова",
     "jobTitle": "Ведущая мероприятий",
     "description": "Ведущая свадеб, церемоний, корпоративов и частных событий в Москве и Московской области.",
-    "url": "https://peterdemidov.github.io/demidovs-event/natalia/",
-    "image": "https://peterdemidov.github.io/demidovs-event/images/natalia-hero-new.webp",
+    "url": "https://demidovs.ru/natalia/",
+    "image": "https://demidovs.ru/images/natalia-hero-new.webp",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Москва",
       "addressCountry": "RU"
     },
-    "areaServed": ["Москва", "Московская область"],
     "telephone": "+7-905-523-95-30",
     "sameAs": [
       "https://t.me/demi_nata",
@@ -219,8 +232,9 @@
     .social-links a{display:inline-flex;margin-right:24px;padding:15px 0 13px;border-bottom:1px solid var(--line);color:var(--paper);font-size:clamp(1.15rem,2vw,1.5rem);line-height:1;text-transform:uppercase;transition:color .2s,border-color .2s}
     .social-links a:hover{color:var(--gold-light);border-color:var(--gold)}
 
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-    .reveal.visible{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none;transition:opacity .75s var(--ease),transform .75s var(--ease)}
+    .motion-ready .reveal{opacity:0;transform:translateY(24px)}
+    .motion-ready .reveal.visible{opacity:1;transform:none}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.gallery-card img{transition:none}.trust-track{animation:none}.trust-group[aria-hidden="true"]{display:none}}
     @media (max-width:980px){
       .showreel-grid,.duo-value,.contact-grid{grid-template-columns:1fr}.duo-quote{position:static}.process-grid{grid-template-columns:repeat(2,1fr)}
@@ -343,6 +357,13 @@
     }
     @media (max-width:720px){.personal-page .hero-media:after{background:linear-gradient(0deg,#f4f4f2 4%,rgba(244,244,242,.9) 42%,rgba(244,244,242,.12) 78%)}}
     @media (prefers-reduced-motion:reduce){.switcher,.hero-media img,.hero h1,.hero .hero-role,.hero .hero-text,.hero .hero-actions{animation:none}}
+    @media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none;transition:none}}
+    #leadForm:not(.ready){display:none}
+    .channel-option input:focus-visible+span{outline:2px solid var(--gold-light);outline-offset:4px}
+    .gallery-track:focus-visible,#reviewsTrack:focus-visible{outline:2px solid var(--gold-light);outline-offset:-3px}
+    .trust:focus-within .trust-track{animation-play-state:paused}
+    .video-fallback{padding:16px 18px;color:var(--paper)}
+    .video-fallback a{text-decoration:underline}
   </style>
 </head>
 <body class="personal-page">
@@ -357,7 +378,7 @@
 
   <main>
     <section class="hero" id="top">
-      <div class="hero-media" style="--hero-image:url('../images/natalia-hero-new.webp')"><img src="../images/natalia-hero-new.webp" alt="Наталья Демидова ведёт мероприятие" width="1359" height="2048"></div>
+      <div class="hero-media" style="--hero-image:url('../images/natalia-hero-new.webp')"><img src="../images/natalia-hero-new.webp" alt="Наталья Демидова ведёт мероприятие" width="1359" height="2048" fetchpriority="high" decoding="async"></div>
       <div class="hero-content wrap">
         <div class="hero-copy reveal">
           <h1>Наталья Демидова</h1>
@@ -397,8 +418,8 @@
           <p class="section-lead">Шоурил и живой фрагмент праздника.</p>
         </div>
         <div class="videos-grid">
-          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/natalia-hero-new.webp"><source src="../media/videos/showreel.mp4" type="video/mp4"></video><figcaption class="video-caption"><strong>Шоурил</strong><span>Наталья Демидова</span></figcaption></figure>
-          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/couple-dance.webp"><source src="../media/videos/wedding-party.mp4" type="video/mp4"></video><figcaption class="video-caption"><strong>Фрагмент праздника</strong><span>Живой момент</span></figcaption></figure>
+          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/natalia-hero-new.webp"><source src="../media/videos/showreel.mp4" type="video/mp4">Ваш браузер не поддерживает видео. <a href="../media/videos/showreel.mp4">Открыть видео</a>.</video><p class="video-fallback" hidden>Видео не удалось загрузить. <a href="../media/videos/showreel.mp4" target="_blank" rel="noopener">Открыть файл видео</a>.</p><figcaption class="video-caption"><strong>Шоурил</strong><span>Наталья Демидова</span></figcaption></figure>
+          <figure class="video-shell reveal"><video controls playsinline preload="none" poster="../images/couple-dance.webp"><source src="../media/videos/wedding-party.mp4" type="video/mp4">Ваш браузер не поддерживает видео. <a href="../media/videos/wedding-party.mp4">Открыть видео</a>.</video><p class="video-fallback" hidden>Видео не удалось загрузить. <a href="../media/videos/wedding-party.mp4" target="_blank" rel="noopener">Открыть файл видео</a>.</p><figcaption class="video-caption"><strong>Фрагмент праздника</strong><span>Живой момент</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -428,7 +449,7 @@
           <button class="icon-button" id="galleryNext" type="button" aria-label="Следующие фотографии">→</button>
         </div>
       </div>
-      <div class="gallery-track" id="galleryTrack" aria-label="Фотографии с мероприятий">
+      <div class="gallery-track" id="galleryTrack" aria-label="Фотографии с мероприятий" tabindex="0">
         <figure class="gallery-card"><img src="../media/photos/gallery-001.webp" alt="Наталья Демидова на мероприятии, фото 1" loading="lazy"></figure>
         <figure class="gallery-card"><img src="../media/photos/gallery-004.webp" alt="Наталья Демидова на мероприятии, фото 2" loading="lazy"></figure>
         <figure class="gallery-card"><img src="../media/photos/gallery-012.webp" alt="Наталья Демидова на мероприятии, фото 3" loading="lazy"></figure>
@@ -544,9 +565,9 @@
             <a href="https://www.instagram.com/demi_natty?stkn=MWk0ZnFhaXNlanFydw==" target="_blank" rel="noopener">INST</a>
           </nav>
         </div>
-        <form id="leadForm" class="reveal">
+        <form id="leadForm" class="reveal" method="post" action="#contact">
           <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" autocomplete="name" required placeholder="Имя"></div>
-          <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 999 000-00-00"></div>
+          <div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" required placeholder="+7 999 000-00-00"></div>
           <div class="field"><label for="date">Дата события</label><input id="date" name="date" type="date"></div>
           <div class="field"><label for="guests">Количество гостей</label><input id="guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="Например, 70"></div>
           <div class="field"><label for="format">Формат</label><select id="format" name="format"><option>Свадьба</option><option>Корпоратив</option><option>Юбилей</option><option>Частное событие</option><option>Другое</option></select></div>
@@ -561,8 +582,9 @@
             </div>
           </fieldset>
           <label class="consent"><input type="checkbox" name="consent" required><span>Я даю <a href="../privacy/#consent" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="../privacy/" target="_blank" rel="noopener">политикой обработки персональных данных</a>.</span></label>
-          <div class="submit-wrap"><button class="button" type="submit">Проверить свою дату</button><p class="form-note" id="formNote">Для WhatsApp и Telegram подготовим сообщение. При выборе звонка откроется нужный номер.</p></div>
+          <div class="submit-wrap"><button class="button" type="submit">Проверить свою дату</button><p class="form-note" id="formNote" role="status" aria-live="polite">Для WhatsApp и Telegram подготовим сообщение. При выборе звонка откроется нужный номер.</p></div>
         </form>
+        <noscript><p>Для заявки свяжитесь с нами по телефону или через ссылки на мессенджеры рядом с формой.</p></noscript>
       </div>
     </section>
   </main>
@@ -577,79 +599,6 @@
 
   <div class="mobile-cta"><a class="button" href="#contact">Проверить свою дату</a></div>
 
-  <script>
-    const $ = (selector, scope = document) => scope.querySelector(selector);
-    const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
-
-    $('#year').textContent = new Date().getFullYear();
-
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {threshold: .12});
-    $$('.reveal').forEach(element => revealObserver.observe(element));
-
-    let scrollBusy = false;
-    addEventListener('scroll', () => {
-      if (scrollBusy) return;
-      scrollBusy = true;
-      requestAnimationFrame(() => {
-        const max = document.documentElement.scrollHeight - innerHeight;
-        $('#progress').style.transform = `scaleX(${max ? scrollY / max : 0})`;
-        scrollBusy = false;
-      });
-    }, {passive: true});
-
-    const gallery = $('#galleryTrack');
-    const galleryStep = () => Math.min(innerWidth * .78, 560);
-    $('#galleryPrev').addEventListener('click', () => gallery.scrollBy({left: -galleryStep(), behavior: 'smooth'}));
-    $('#galleryNext').addEventListener('click', () => gallery.scrollBy({left: galleryStep(), behavior: 'smooth'}));
-
-    const reviews = $('#reviewsTrack');
-    const reviewStep = () => {
-      const card = $('.review', reviews);
-      return card ? card.getBoundingClientRect().width + 16 : Math.min(innerWidth * .88, 440);
-    };
-    $('#reviewsPrev').addEventListener('click', () => reviews.scrollBy({left: -reviewStep(), behavior: 'smooth'}));
-    $('#reviewsNext').addEventListener('click', () => reviews.scrollBy({left: reviewStep(), behavior: 'smooth'}));
-
-    const contacts = {
-      petr: {name: 'Пётр', phone: '79260676601', telegram: 'p_demidov'},
-      natalia: {name: 'Наталья', phone: '79055239530', telegram: 'demi_nata'}
-    };
-
-    $('#leadForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      if (!form.reportValidity()) return;
-      const data = new FormData(form);
-      const contact = contacts[data.get('recipient')];
-      const message = [
-        `Здравствуйте, ${contact.name}! Хочу проверить дату мероприятия.`,
-        '',
-        `Имя: ${data.get('name')}`,
-        `Телефон: ${data.get('phone')}`,
-        `Дата: ${data.get('date') || 'пока не определена'}`,
-        `Формат: ${data.get('format')}`,
-        `Гостей: ${data.get('guests') || 'уточню позже'}`,
-        `Город или площадка: ${data.get('city') || 'уточню позже'}`,
-        `Связаться: ${data.get('channel')}`
-      ].join('\n');
-      const encoded = encodeURIComponent(message);
-      let url;
-      if (data.get('channel') === 'telegram') {
-        url = `https://t.me/${contact.telegram}?text=${encoded}`;
-      } else if (data.get('channel') === 'call') {
-        url = `tel:+${contact.phone}`;
-      } else {
-        url = `https://wa.me/${contact.phone}?text=${encoded}`;
-      }
-      open(url, '_blank', 'noopener');
-    });
-  </script>
+  <script src="../assets/site.js" defer></script>
 </body>
 </html>

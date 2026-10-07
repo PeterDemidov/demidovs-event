@@ -1,0 +1,11 @@
+{
+  "name": "demidovs-event",
+  "private": true,
+  "scripts": {
+    "check": "python3 scripts/check_site.py && node --check assets/site.js",
+    "test": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
