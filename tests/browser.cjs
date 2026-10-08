@@ -22,7 +22,19 @@ const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:8765/';
         assert(await page.locator('h1').isVisible());
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
         assert(!overflow, `Horizontal overflow: ${path} at ${width}`);
-        const broken = await page.locator('img').evaluateAll((images) => images.filter((img) => img.complete && !img.naturalWidth).map((img) => img.src));
+        // Decode every image, including lazy images outside the viewport/carousel.
+        const broken = await page.locator('img').evaluateAll(async (images) => {
+          const failures = await Promise.all(images.map(async (img) => {
+            img.loading = 'eager';
+            try {
+              await img.decode();
+              return img.naturalWidth > 0 ? null : img.src;
+            } catch {
+              return img.src;
+            }
+          }));
+          return failures.filter(Boolean);
+        });
         assert.deepEqual(broken, [], `Broken images: ${path}`);
         if (path !== 'privacy/') {
           await page.locator('#leadForm').scrollIntoViewIfNeeded();

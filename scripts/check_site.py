@@ -38,6 +38,25 @@ def check(condition, message):
     if not condition:
         ERRORS.append(message)
 
+def check_url(name, url):
+    parts = urlsplit(url)
+    if parts.scheme or url.startswith('//'):
+        check(parts.scheme != 'http', f'{name}: insecure URL {url}')
+        if parts.netloc != 'demidovs.ru':
+            return
+    path = unquote(parts.path)
+    p = ROOT / name
+    dest = (ROOT / path.lstrip('/')) if path.startswith('/') else (p.parent / path if path else p)
+    if dest.is_dir():
+        dest = dest / 'index.html'
+    check(dest.is_file(), f'{name}: missing target {url}')
+    if not dest.is_file():
+        return
+    check(dest.stat().st_size > 0, f'{name}: empty target {url}')
+    if dest.suffix == '.html' and parts.fragment:
+        target = Document(dest.read_text())
+        check(any(a.get('id') == unquote(parts.fragment) for _, a in target.tags), f'{name}: missing anchor {url}')
+
 pages = ['index.html', 'duet/index.html', 'petr/index.html', 'natalia/index.html', 'privacy/index.html', '404.html']
 docs = {name: Document((ROOT / name).read_text()) for name in pages}
 for name, doc in docs.items():
@@ -56,18 +75,11 @@ for name, doc in docs.items():
             url = attrs.get(attr)
             if not url:
                 continue
-            parts = urlsplit(url)
-            if parts.scheme or url.startswith('//'):
-                check(parts.scheme != 'http', f'{name}: insecure URL {url}')
-                continue
-            path = unquote(parts.path)
-            dest = (ROOT / path.lstrip('/')) if path.startswith('/') else (p.parent / path if path else p)
-            if dest.is_dir():
-                dest = dest / 'index.html'
-            check(dest.exists(), f'{name}: missing target {url}')
-            if dest.exists() and dest.suffix == '.html' and parts.fragment:
-                target = Document(dest.read_text())
-                check(any(a.get('id') == parts.fragment for _, a in target.tags), f'{name}: missing anchor {url}')
+            check_url(name, url)
+        if tag == 'meta' and attrs.get('property', attrs.get('name')) in ['og:url', 'og:image', 'twitter:image']:
+            check_url(name, attrs.get('content', ''))
+    for match in re.finditer(r'url\(\s*[\"\']?([^\)\"\']+)', p.read_text()):
+        check_url(name, match.group(1).strip())
     if name in pages[:4]:
         canonical = 'https://demidovs.ru/' + (name.split('/')[0] + '/' if name.startswith(('petr/', 'natalia/')) else '')
         links = [a.get('href') for t, a in doc.tags if t == 'link' and a.get('rel') == 'canonical']
@@ -78,6 +90,7 @@ for name, doc in docs.items():
         data = doc.jsonld[0]
         check(data.get('url') == canonical, f'{name}: wrong JSON-LD url')
         image = data.get('image', '')
+        check_url(name, image)
         check(image.startswith('https://demidovs.ru/'), f'{name}: wrong JSON-LD image origin')
         check((ROOT / urlsplit(image).path.lstrip('/')).is_file(), f'{name}: missing JSON-LD image')
         check(meta.get('og:image') == image and meta.get('twitter:image') == image, f'{name}: image metadata mismatch')
@@ -91,6 +104,17 @@ check('Sitemap: https://demidovs.ru/sitemap.xml' in (ROOT / 'robots.txt').read_t
 sitemap = ET.parse(ROOT / 'sitemap.xml')
 locations = [x.text for x in sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
 check(locations == ['https://demidovs.ru/', 'https://demidovs.ru/petr/', 'https://demidovs.ru/natalia/'], 'Unexpected sitemap URLs')
+for location in locations:
+    check_url('sitemap.xml', location)
+    page = urlsplit(location).path.lstrip('/') + 'index.html'
+    target = docs.get(page)
+    check(target is not None and any(t == 'link' and a.get('rel') == 'canonical' and a.get('href') == location for t, a in target.tags), f'sitemap.xml: noncanonical URL {location}')
+for directory in ['images', 'media']:
+    for resource in (ROOT / directory).rglob('*'):
+        if resource.is_file():
+            check(resource.stat().st_size > 0, f'Empty media file: {resource.relative_to(ROOT)}')
+check(any(t == 'meta' and a.get('name') == 'robots' and 'noindex' in a.get('content', '').split(',') for t, a in docs['404.html'].tags), '404.html: missing noindex')
+check([a.get('href') for t, a in docs['404.html'].tags if t == 'a'] == ['/', '/petr/', '/natalia/'], '404.html: navigation must use root-relative routes')
 # The duplicate duo page must keep exactly the same content and layout.
 normalize = lambda s: s.replace('../', '')
 check(normalize((ROOT / 'index.html').read_text()) == normalize((ROOT / 'duet/index.html').read_text()), 'Duo pages diverged')
