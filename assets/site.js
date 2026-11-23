@@ -108,8 +108,8 @@
       `Телефон: ${data.get('phone')}`,
       `Дата: ${data.get('date') || 'пока не определена'}`,
       `Формат: ${data.get('format')}`,
-      `Гостей: ${data.get('guests') || 'уточню позже'}`,
-      `Город или площадка: ${data.get('city') || 'уточню позже'}`,
+      
+      
       `Связаться: ${channel}`
     ].join('\n');
     const encoded = encodeURIComponent(message);
